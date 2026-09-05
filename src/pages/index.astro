@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { absoluteUrl } from '../lib/site.js';
+
+const siteOrigin = import.meta.env.SITE_ORIGIN ?? 'https://example.com';
+const homeUrl = absoluteUrl('/', siteOrigin);
+---
+
+<BaseLayout
+  title="Aria Nurhadi Zain"
+  description="Full-stack web developer with agency-stack compatibility, visual orientation, and practical automation interest."
+  canonical={homeUrl}
+>
+  <section class="hero container" aria-labelledby="hero-title">
+    <p class="hero__eyebrow label">Aria Nurhadi Zain · Full-stack Web Developer</p>
+    <h1 id="hero-title" class="hero__title">
+      Building fast, growth-focused web experiences and practical automation.
+    </h1>
+    <p class="hero__support">
+      I combine full-stack development, SEO and analytics awareness, visual judgment, and
+      production-minded delivery to build digital products that support real business goals.
+    </p>
+    <div class="hero__actions">
+      <a class="button button--primary" href="/work/">View selected work</a>
+      <a class="button button--secondary" href="https://github.com/codebyaria" rel="me">
+        GitHub ↗
+      </a>
+    </div>
+    <p class="hero__status label" aria-live="polite">
+      Provisional positioning · Evidence review pending
+    </p>
+  </section>
+
+  <section class="status-bar container" aria-label="Current state">
+    <dl>
+      <div>
+        <dt class="label">Full-time</dt>
+        <dd>Open to full-time remote employment.</dd>
+      </div>
+      <div>
+        <dt class="label">Based</dt>
+        <dd>Sukoharjo, Central Java, Indonesia.</dd>
+      </div>
+      <div>
+        <dt class="label">English</dt>
+        <dd>Conversational, not yet fluent.</dd>
+      </div>
+      <div>
+        <dt class="label">In development</dt>
+        <dd>Local Business Growth demo · AI SEO pipeline · SEO dashboard</dd>
+      </div>
+    </dl>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: clamp(3rem, 8vw, 7rem);
+    display: grid;
+    gap: var(--space-lg);
+    border-bottom: 1px solid var(--line);
+  }
+  .hero__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .hero__title {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.045em;
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    max-width: 24ch;
+  }
+  .hero__support {
+    margin: 0;
+    max-width: 52ch;
+    color: var(--soft-ink);
+    font-size: 1.125rem;
+  }
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .hero__status {
+    margin: 0;
+    color: var(--caution);
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .button--primary {
+    background: var(--ink);
+    color: var(--inverse);
+  }
+  .button--secondary {
+    background: var(--paper);
+  }
+  .button--primary:hover,
+  .button--primary:focus-visible {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .status-bar {
+    padding-block: var(--space-xl);
+  }
+  .status-bar dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: var(--space-lg);
+  }
+  .status-bar dt {
+    color: var(--soft-ink);
+    margin-bottom: 0.25rem;
+  }
+  .status-bar dd {
+    margin: 0;
+    font-weight: 600;
+  }
+  @media (max-width: 580px) {
+    .hero {
+      padding-block: var(--space-2xl);
+    }
+  }
+</style>

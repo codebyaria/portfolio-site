@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const projects = (await getCollection('work')).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title),
+);
+---
+
+<BaseLayout
+  title="Work"
+  description="Selected work, classified by evidence status. No fabricated outcomes."
+>
+  <section class="container work-page" aria-labelledby="work-title">
+    <p class="label work-page__eyebrow">Selected work · {projects.length} entries</p>
+    <h1 id="work-title">What I have been building</h1>
+    <p class="work-page__intro">
+      Each entry is classified. In-development concepts, client work, prototypes, and real
+      production experience all stay distinct. No metric, client outcome, or screenshot appears here
+      until evidence review confirms it.
+    </p>
+    <div class="work-page__list">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .work-page {
+    padding-block: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    gap: var(--space-xl);
+  }
+  .work-page__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .work-page h1 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+    max-width: 24ch;
+  }
+  .work-page__intro {
+    margin: 0;
+    max-width: 60ch;
+    color: var(--soft-ink);
+  }
+  .work-page__list {
+    border-top: 1px solid var(--line);
+  }
+</style>

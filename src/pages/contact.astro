@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch with Aria Nurhadi Zain for full-time remote opportunities."
+>
+  <section class="container contact" aria-labelledby="contact-title">
+    <p class="label contact__eyebrow">Contact</p>
+    <h1 id="contact-title">Open to full-time remote opportunities.</h1>
+    <p class="contact__lead">
+      I am currently based in Sukoharjo, Central Java, Indonesia, and ready for a full-time remote
+      role in full-stack web development, headless CMS, or practical AI automation.
+    </p>
+    <ul class="contact__list">
+      <li>
+        <span class="label">Email</span>
+        <a href="mailto:arianurhadi81@gmail.com">arianurhadi81@gmail.com</a>
+      </li>
+      <li>
+        <span class="label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/ariazain/" rel="me">linkedin.com/in/ariazain</a>
+      </li>
+      <li>
+        <span class="label">GitHub</span>
+        <a href="https://github.com/codebyaria" rel="me">github.com/codebyaria</a>
+      </li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact {
+    padding-block: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    gap: var(--space-xl);
+  }
+  .contact__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .contact h1 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+    max-width: 22ch;
+  }
+  .contact__lead {
+    margin: 0;
+    max-width: 60ch;
+    color: var(--soft-ink);
+    font-size: 1.125rem;
+  }
+  .contact__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-md);
+    border-top: 1px solid var(--line);
+    padding-top: var(--space-lg);
+  }
+  .contact__list li {
+    display: grid;
+    gap: 0.15rem;
+  }
+  .contact__list .label {
+    color: var(--soft-ink);
+  }
+  .contact__list a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    font-weight: 700;
+  }
+  .contact__list a:hover,
+  .contact__list a:focus-visible {
+    border-bottom-color: var(--accent);
+  }
+</style>

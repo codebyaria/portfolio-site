@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const languages = ['Indonesian (native)', 'English (conversational)'];
+---
+
+<BaseLayout
+  title="About"
+  description="About Aria Nurhadi Zain: full-stack web developer with agency-stack compatibility, visual orientation, and practical automation interest."
+>
+  <section class="container about" aria-labelledby="about-title">
+    <p class="label about__eyebrow">About</p>
+    <h1 id="about-title">Full-stack developer, agency mindset.</h1>
+    <div class="about__grid">
+      <div class="about__copy prose">
+        <p>
+          I am <strong>Aria Nurhadi Zain</strong>, a full-stack web developer based in Sukoharjo,
+          Central Java, Indonesia. I am drawn to agency work because it combines the two things I
+          care about most: business growth and visual craft.
+        </p>
+        <p>
+          My background spans Laravel and PHP application work, WordPress and Elementor client
+          delivery, multi-provider hosting and operations, and practical analytics integrations
+          across GA4, Search Console, Meta and TikTok pixels, Microsoft Clarity, and Hotjar. I have
+          shipped and maintained production systems and I take that maintenance work seriously.
+        </p>
+        <p>
+          What I am still building evidence for: production Astro, Strapi, and inspectable AI
+          workflows. These appear as concept demos on the
+          <a href="/work/">Work</a> page until real deployments land.
+        </p>
+      </div>
+      <aside class="about__facts" aria-label="Quick facts">
+        <dl>
+          <div>
+            <dt class="label">Based</dt>
+            <dd>Sukoharjo, Central Java, Indonesia</dd>
+          </div>
+          <div>
+            <dt class="label">Intent</dt>
+            <dd>Open to full-time remote employment</dd>
+          </div>
+          <div>
+            <dt class="label">Languages</dt>
+            <dd>{languages.join(' · ')}</dd>
+          </div>
+          <div>
+            <dt class="label">In development</dt>
+            <dd>Production Astro + Strapi build, AI SEO demo, dashboard demo</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about {
+    padding-block: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    gap: var(--space-xl);
+  }
+  .about__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .about h1 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+    max-width: 22ch;
+  }
+  .about__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--line);
+  }
+  .about__copy p {
+    margin: 0 0 1rem;
+  }
+  .about__copy a {
+    color: inherit;
+    border-bottom: 1px solid currentColor;
+  }
+  .about__facts dl {
+    margin: 0;
+    display: grid;
+    gap: var(--space-md);
+  }
+  .about__facts dt {
+    color: var(--soft-ink);
+    margin-bottom: 0.15rem;
+  }
+  .about__facts dd {
+    margin: 0;
+    font-weight: 600;
+  }
+  @media (max-width: 860px) {
+    .about__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

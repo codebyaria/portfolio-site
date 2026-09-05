@@ -1,0 +1,39 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__row">
+    <p class="site-footer__name">Aria Nurhadi Zain · Full-Stack Web Developer</p>
+    <p class="site-footer__meta">
+      Provisional copy · Evidence review pending · <span>{year}</span>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 2px solid var(--ink);
+    background: var(--paper);
+    margin-top: var(--space-3xl);
+  }
+  .site-footer__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-block: var(--space-lg);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--soft-ink);
+  }
+  .site-footer__name {
+    margin: 0;
+    font-weight: 700;
+  }
+  .site-footer__meta {
+    margin: 0;
+  }
+</style>

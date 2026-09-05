@@ -1,0 +1,113 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EvidenceMeta from '../../components/EvidenceMeta.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('work');
+  return projects.map((project) => ({
+    params: { slug: project.data.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<BaseLayout
+  title={project.data.title}
+  description={project.data.summary}
+  canonical={`/work/${project.data.slug}/`}
+>
+  <article class="case-study container">
+    <header class="case-study__header">
+      <p class="label case-study__eyebrow">Case study · {project.data.slug}</p>
+      <h1>{project.data.title}</h1>
+      <p class="case-study__summary">{project.data.summary}</p>
+      <EvidenceMeta classification={project.data.classification} status={project.data.status} />
+    </header>
+    <section class="case-study__meta">
+      <div>
+        <p class="label">Role</p>
+        <p>{project.data.role}</p>
+      </div>
+      <div>
+        <p class="label">Stack</p>
+        <ul class="case-study__stack">
+          {project.data.stack.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+      {
+        project.data.evidence && (
+          <div>
+            <p class="label">Evidence</p>
+            <p>{project.data.evidence}</p>
+          </div>
+        )
+      }
+    </section>
+    <section class="case-study__body prose">
+      <Content />
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .case-study {
+    padding-block: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    gap: var(--space-xl);
+  }
+  .case-study__header {
+    display: grid;
+    gap: var(--space-md);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--line);
+  }
+  .case-study__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .case-study h1 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+    max-width: 22ch;
+  }
+  .case-study__summary {
+    margin: 0;
+    max-width: 60ch;
+    color: var(--soft-ink);
+    font-size: 1.125rem;
+  }
+  .case-study__meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--space-lg);
+    padding-block: var(--space-md);
+    border-bottom: 1px solid var(--line);
+  }
+  .case-study__meta .label {
+    color: var(--soft-ink);
+    margin: 0 0 0.25rem;
+  }
+  .case-study__meta p {
+    margin: 0;
+  }
+  .case-study__stack {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.6rem;
+  }
+  .case-study__body {
+    font-family: var(--font-longform);
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+</style>

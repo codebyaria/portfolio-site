@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const notes = [
+  {
+    title: 'Why Astro is a strong fit for content-heavy marketing websites',
+    summary:
+      'Static-first rendering, islands for interactivity, and a single TypeScript codebase that scales from landing pages to content platforms.',
+    status: 'in-development',
+  },
+  {
+    title: 'Building a headless CMS with Astro + Strapi',
+    summary:
+      'A small, typed REST client, content modeling that respects publishing rules, and structured data on every public page.',
+    status: 'in-development',
+  },
+  {
+    title: 'Automating SEO metadata with AI',
+    summary:
+      'Validate first, suggest second, never auto-publish. A pattern for safe AI SEO assistance in production CMS workflows.',
+    status: 'in-development',
+  },
+  {
+    title: 'Technical SEO checklist for modern websites',
+    summary:
+      'A practical checklist covering metadata, canonical URLs, hreflang, structured data, sitemap, robots, and Core Web Vitals.',
+    status: 'in-development',
+  },
+];
+---
+
+<BaseLayout
+  title="Notes"
+  description="Short, evidence-led notes on Astro, headless CMS, SEO, and practical AI automation."
+>
+  <section class="container notes" aria-labelledby="notes-title">
+    <p class="label notes__eyebrow">Notes</p>
+    <h1 id="notes-title">Short notes from the workbench.</h1>
+    <p class="notes__intro">
+      I publish only when I have something specific to point at: a working project, a measured
+      result, or a clear pattern. Drafts in progress are labelled as such.
+    </p>
+    <ul class="notes__list">
+      {
+        notes.map((note) => (
+          <li>
+            <article>
+              <p class="label">In development</p>
+              <h2>{note.title}</h2>
+              <p>{note.summary}</p>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .notes {
+    padding-block: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    gap: var(--space-xl);
+  }
+  .notes__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .notes h1 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+    max-width: 22ch;
+  }
+  .notes__intro {
+    margin: 0;
+    max-width: 60ch;
+    color: var(--soft-ink);
+  }
+  .notes__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .notes__list li {
+    padding-block: var(--space-lg);
+    border-bottom: 1px solid var(--line);
+  }
+  .notes__list h2 {
+    margin: 0.25rem 0 0.5rem;
+    font-family: var(--font-sans);
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+    letter-spacing: -0.03em;
+  }
+  .notes__list p {
+    margin: 0;
+    max-width: 60ch;
+    color: var(--soft-ink);
+  }
+</style>

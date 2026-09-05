@@ -1,0 +1,80 @@
+---
+import type { ProjectClassification, ProjectStatus } from '../lib/project-schema.ts';
+
+const { classification, status } = Astro.props as {
+  classification: ProjectClassification;
+  status: ProjectStatus;
+};
+
+const classificationLabels: Record<ProjectClassification, string> = {
+  'concept-demo': 'Concept / Demo',
+  prototype: 'Prototype',
+  'client-work': 'Client work',
+  'personal-project': 'Personal project',
+  production: 'Production',
+};
+
+const statusLabels: Record<ProjectStatus, string> = {
+  'in-development': 'In development',
+  'self-reported': 'Self-reported',
+  published: 'Published',
+};
+
+const statusTone: Record<ProjectStatus, string> = {
+  'in-development': 'caution',
+  'self-reported': 'muted',
+  published: 'accent',
+};
+---
+
+<dl class="evidence-meta">
+  <div class="evidence-meta__row">
+    <dt class="label">Classification</dt>
+    <dd class="chip chip--neutral">{classificationLabels[classification]}</dd>
+  </div>
+  <div class="evidence-meta__row">
+    <dt class="label">Evidence status</dt>
+    <dd class={`chip chip--${statusTone[status]}`}>{statusLabels[status]}</dd>
+  </div>
+</dl>
+
+<style>
+  .evidence-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 0.75rem 1.5rem;
+    margin: 0;
+  }
+  .evidence-meta__row {
+    display: grid;
+    gap: 0.25rem;
+  }
+  .evidence-meta dt {
+    color: var(--soft-ink);
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    align-self: start;
+    min-height: 28px;
+    padding: 0.25rem 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid currentColor;
+  }
+  .chip--neutral {
+    color: var(--ink);
+  }
+  .chip--accent {
+    color: var(--accent);
+  }
+  .chip--caution {
+    color: var(--caution);
+  }
+  .chip--muted {
+    color: var(--soft-ink);
+  }
+</style>

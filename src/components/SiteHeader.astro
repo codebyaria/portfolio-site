@@ -1,0 +1,108 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/work/', label: 'Work' },
+  { href: '/about/', label: 'About' },
+  { href: '/notes/', label: 'Notes' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+
+<header class="site-header">
+  <div class="container site-header__row">
+    <a class="site-header__mark" href="/">
+      <span class="site-header__avatar" aria-hidden="true">AZ</span>
+      <span class="site-header__name">Aria Nurhadi Zain</span>
+    </a>
+    <nav class="site-header__nav" aria-label="Primary">
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <p class="site-header__meta">
+      <span>Full-time · Remote</span>
+      <span>Sukoharjo, Central Java, Indonesia</span>
+    </p>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--ink);
+    background: var(--paper);
+  }
+  .site-header__row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 3rem);
+    min-height: 76px;
+  }
+  .site-header__mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    font-weight: 800;
+  }
+  .site-header__avatar {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    background: var(--ink);
+    color: var(--inverse);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+  }
+  .site-header__name {
+    font-family: var(--font-sans);
+  }
+  .site-header__nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    justify-content: center;
+  }
+  .site-header__nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    font-weight: 700;
+  }
+  .site-header__nav a:hover,
+  .site-header__nav a:focus-visible {
+    border-bottom-color: var(--accent);
+  }
+  .site-header__meta {
+    display: grid;
+    gap: 0.15rem;
+    margin: 0;
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--soft-ink);
+  }
+  @media (max-width: 860px) {
+    .site-header__row {
+      grid-template-columns: auto 1fr;
+    }
+    .site-header__meta {
+      grid-column: 1 / -1;
+      text-align: left;
+    }
+  }
+</style>
