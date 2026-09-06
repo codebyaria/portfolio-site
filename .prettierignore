@@ -5,3 +5,6 @@ node_modules
 coverage
 *.min.js
 *.min.css
+docs
+DESIGN.md
+docs/tdd-log.md

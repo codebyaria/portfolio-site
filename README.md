@@ -1,43 +1,76 @@
-# Astro Starter Kit: Minimal
+# Portfolio Site
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+[![CI](https://github.com/codebyaria/portfolio-site/actions/workflows/ci.yml/badge.svg)](https://github.com/codebyaria/portfolio-site/actions/workflows/ci.yml)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Phase 1 of the DigiAgency application portfolio. Astro 7 + TypeScript strict
+portfolio site that surfaces selected work, notes, and production
+experience.
 
-## 🚀 Project Structure
+## Project Overview
 
-Inside of your Astro project, you'll see the following folders and files:
+A focused application portfolio demonstrating modern web development,
+headless CMS architecture, SEO and performance, and AI-assisted automation.
+Built specifically to support an application for **Full Stack Developer —
+AI & Automation Focus (Data Engineer) & Web Developer** at DigiAgency.
+
+## Architecture
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── pages/        Astro routes (index, work, work/[slug], about, notes, contact)
+├── layouts/      BaseLayout.astro (SEO meta, OG, canonical)
+├── components/   SiteHeader, SiteFooter, ProjectCard, EvidenceMeta
+├── content/      Astro Content Collections (work/, notes/)
+├── lib/          project-schema, site config
+├── data/work/    Work entries (frontmatter validated by Zod-style schema)
+└── styles/       global.css
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Editorial Technical visual direction (ADR-005). Decision / Learn surface:
+hiring manager scans the homepage; technical reviewer drills into work
+entries.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Features
 
-Any static assets, like images, can be placed in the `public/` directory.
+- `/` homepage with selected work cards and capability descriptions.
+- `/work/` index + `/work/[slug]/` detail pages (Content Collection).
+- `/about/`, `/notes/`, `/contact/`.
+- Sitemap, robots.txt, canonical URLs, Open Graph, Twitter card.
+- `noindex` on draft and contact surfaces where appropriate.
+- Responsive, accessible navigation.
 
-## 🧞 Commands
+## Local Development
 
-All commands are run from the root of the project, from a terminal:
+```bash
+pnpm install
+pnpm dev          # http://localhost:4321
+pnpm test         # Vitest
+pnpm typecheck    # tsc --noEmit (strict)
+pnpm lint         # ESLint --max-warnings=0
+pnpm format:check # Prettier
+pnpm build        # Astro static build
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## Tech Stack
 
-## 👀 Want to learn more?
+- Astro 7 with strict TypeScript
+- React (none currently; islands available if needed)
+- ESLint + Prettier
+- Vitest
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## CI / CD
+
+GitHub Actions runs `lint`, `format:check`, `typecheck`, `test`, and
+`build` on every push to `main` and on every pull request. See
+`.github/workflows/ci.yml`.
+
+## Deployment
+
+Vercel (manual import via vercel.com UI as `codebyaria` account). Static
+build — no Node adapter needed.
+
+## Honesty
+
+Every claim in this repository is sourced. See `../docs/honesty-and-claims.md`
+in the workspace root for the full policy. No fabricated metrics, clients,
+or responsibilities.
