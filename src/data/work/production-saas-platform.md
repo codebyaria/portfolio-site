@@ -2,76 +2,117 @@
 title: Production SaaS Platform
 slug: production-saas-platform
 summary: >-
-  Real professional work on a production SaaS / POS platform — full-stack
-  feature work, debugging, analytics, and operational improvements.
+  Real professional work at GuruInovatif (Indonesian teacher-development
+  platform): source-tracking, events, affiliate programme, and the public
+  landing page. Generic case study with honest "pending evidence" markers
+  where metrics are not isolated to this contribution.
 classification: production
-role: Full-Stack Web Developer
+role: Fullstack Developer
 stack:
   - Laravel
-  - PHP
+  - Tailwind
+  - Bootstrap
   - MySQL
-  - REST
-  - WordPress
-  - Analytics
+  - GitHub
 status: self-reported
+deploymentUrl: https://guruinovatif.id/
 evidence: >-
-  Pending verified facts. The case study on this entry is a structured
-  template waiting for the contribution blocks defined in
-  `production-case-study/PENDING-FACTS.md` to be filled with evidence
-  (employer, dates, modules touched, measurable outcomes).
+  Live product publicly visible at https://guruinovatif.id/. Specific
+  retention/conversion impact not isolated to this contribution; left
+  as pending evidence rather than rounded up.
 ---
 
-## Intent
+## Context
 
-PRD 5.5 ("Production Experience") requires that the portfolio site surfaces
-real professional work, not only concept demos and personal work. This entry
-exists so reviewers can see that the candidate has shipped and maintained
-production systems, separately from the portfolio artifacts.
+[GuruInovatif](https://guruinovatif.id/) is an Indonesian education and
+teacher-development platform. Its public offering includes online courses,
+webinars, certification programmes (BerJP), and supporting resources aimed at
+improving the classroom practice of Indonesian teachers. The product is
+publicly visible and active at the time of writing.
 
-## Why the entry is honest about being a draft
+## Dates and work arrangement
 
-Three reasons this entry is shipped in a `self-reported` / `production`
-classification but with **no specific claims on the public page yet**:
+August 2022 – January 2024, Fullstack Developer.
 
-1. **PRD 10.2 forbids fabrication.** The master PRD explicitly says: "Do not
-   expose confidential code, private credentials, sensitive client data,
-   proprietary architecture details, internal business information." Anything
-   published here must be cleared against that list.
-2. **`docs/honesty-and-claims.md` rules.** "Pending Verification — internal
-   content status; never publish as a completed claim." Without verified
-   facts, the only honest move is to publish the _structure_ and not the
-   _claims_.
-3. **No client name, code, or proprietary detail may appear here without an
-   explicit confidentiality review** (see
-   `production-case-study/PENDING-FACTS.md` for the review checklist).
+## Role
 
-## What the case study will look like, once verified
+Fullstack Developer on the public-facing web application. The contributions
+below were owned end-to-end: from the data model, through the application
+logic, to the front-end integration on the public marketing surface.
 
-Once the contribution blocks in `PENDING-FACTS.md` are filled with evidence,
-this page will publish:
+## Contributions
 
-- **Context**: what kind of product it was (SaaS / POS / internal platform /
-  agency delivery) — without naming the employer or exposing proprietary
-  architecture.
-- **Role**: the actual scope of work, accurately bounded.
-- **Problems**: the actual problems worked on, phrased as generic patterns
-  (e.g. "billing reconciliation race condition") rather than employer-specific
-  detail.
-- **Contributions**: a small set of Problem → Action → Result entries,
-  each backed by a verifiable artifact (ticket reference, approved summary,
-  screenshot where allowed, or — when nothing else is allowed — an explicit
-  "pending evidence" marker).
-- **Outcome**: measurable results **only when real data exists**. Otherwise
-  the section is left empty, not rounded up.
+### 1. Source-tracking layer
 
-## How to contribute
+**Problem.** The marketing team needed to attribute registrations and other
+key actions to specific traffic sources so that acquisition channels could
+be compared honestly.
 
-If you (the candidate) want to unblock this entry, fill the contribution
-blocks in `production-case-study/PENDING-FACTS.md` and submit them back to
-the agent. The public copy on this page will be drafted from those blocks
-and reviewed against the confidentiality checklist before any change ships
-to `main`.
+**Action.** Implemented a source-tracking layer on the registration flow so
+that each new user account could be tied back to its acquisition channel.
 
-Until then, this entry serves as the **scaffold** that proves the structure
-is ready, and as the **signal** to a technical reviewer that the production
-claim is being handled honestly rather than fabricated.
+**Result.** Pending evidence — no isolated metric is currently attributable
+to this layer, so no number is published here.
+
+### 2. Events feature
+
+**Problem.** The platform needed a way to surface upcoming and past training
+events to teachers, integrated with the existing Laravel application rather
+than as a separate tool.
+
+**Action.** Built the events feature: listing and detail views, integrated
+with the existing application surface and the same content workflow used by
+the rest of the platform.
+
+**Result.** Pending evidence.
+
+### 3. Affiliate system
+
+**Problem.** There was no programme for teachers to refer other teachers and
+be credited for the referral.
+
+**Action.** Implemented an affiliate layer so that existing users could
+refer new users and the system could track that relationship end-to-end.
+
+**Result.** Pending evidence.
+
+### 4. Public landing page
+
+**Problem.** The platform needed a public landing page that communicated
+its offering and converted visitors into registered accounts.
+
+**Action.** Built and maintained the public landing page using Laravel with
+Tailwind and Bootstrap used in distinct parts of the page (Tailwind for the
+newer sections, Bootstrap where it was already present in the existing
+component library).
+
+**Result.** Pending evidence.
+
+## Outcome
+
+Shipped and maintained the events + affiliate + source-tracking layer, plus
+the public landing page, for the GuruInovatif platform. Specific
+retention/conversion impact not isolated to this contribution; left as
+pending evidence rather than rounded up to company-level numbers.
+
+## Technology
+
+Laravel · Tailwind · Bootstrap · MySQL · GitHub · Notion (for internal
+documentation).
+
+## What appears in this case study, and what does not
+
+This page is intentionally bounded:
+
+- **Public.** The product name, the publicly visible offering, the generic
+  role label, the dates, the generic contribution descriptions above, the
+  tech stack, and the link to the live product.
+- **Private.** Internal business logic, customer or user behaviour data,
+  internal team structure, proprietary implementation details, and any
+  metrics that are not personally attributable to this contribution. None
+  of that is reproduced here.
+
+If a future review uncovers a specific, sourceable metric attributable to
+this contribution, it will be added with an explicit evidence note. Until
+then, the "Pending evidence" markers above are deliberate and honest, not
+an oversight.
