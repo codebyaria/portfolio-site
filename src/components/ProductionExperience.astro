@@ -1,0 +1,197 @@
+---
+/**
+ * Production Experience section (PRD 5.5).
+ *
+ * Surfaces the claim that the candidate has worked on real professional
+ * systems, separate from the portfolio demos. Until verified facts exist,
+ * the section is a placeholder honesty card explaining what will go here
+ * and why nothing is published yet.
+ */
+---
+
+<section class="production container" aria-labelledby="production-title" data-state="pending-facts">
+  <p class="label production__eyebrow">Production Experience</p>
+  <h2 id="production-title">Real professional work, separate from the demos.</h2>
+  <p class="production__lead">
+    Beyond the portfolio projects above, this section is reserved for documented experience shipping
+    and maintaining production systems in a professional setting.
+  </p>
+
+  <aside class="production__notice" role="status">
+    <p class="label production__notice-label">Honesty notice</p>
+    <p class="production__notice-body">
+      <strong>No production claims are published on this page yet.</strong>
+      The structure is in place so that once verified contribution blocks are filled in <code
+        >production-case-study/PENDING-FACTS.md</code
+      >, the case study can be drafted, reviewed for confidentiality, and merged. The portfolio
+      explicitly does not fabricate employer names, dates, modules, or metrics (per PRD 10.2 and the
+      project's honesty rules).
+    </p>
+  </aside>
+
+  <dl class="production__facets">
+    <div class="production__facet">
+      <dt class="label">What's intended for this section</dt>
+      <dd>
+        <ul role="list">
+          <li>Context — what kind of production product it was.</li>
+          <li>Role — the actual scope, bounded accurately.</li>
+          <li>Problems and contributions — generic patterns, employer-neutral.</li>
+          <li>Outcome — measurable results <em>only</em> when real data exists.</li>
+        </ul>
+      </dd>
+    </div>
+    <div class="production__facet">
+      <dt class="label">What will never appear here without verification</dt>
+      <dd>
+        <ul role="list">
+          <li>Confidential client code or credentials.</li>
+          <li>Sensitive customer or business data.</li>
+          <li>Proprietary architecture details or internal processes.</li>
+          <li>Metrics that are not personally attributable and sourceable.</li>
+        </ul>
+      </dd>
+    </div>
+    <div class="production__facet">
+      <dt class="label">Where the contributions are tracked</dt>
+      <dd>
+        <ul role="list">
+          <li>
+            <a href="https://github.com/codebyaria/production-case-study" rel="noopener"
+              >production-case-study</a
+            >
+            — pending scaffold for the standalone case-study repo.
+          </li>
+          <li>
+            <code>PENDING-FACTS.md</code> — per-contribution blocks awaiting evidence.
+          </li>
+          <li>
+            <code>private-source.md</code> — full internal fact source, kept out of the public repo.
+          </li>
+        </ul>
+      </dd>
+    </div>
+  </dl>
+</section>
+
+<style>
+  .production {
+    padding-block: clamp(2.5rem, 7vw, 6rem);
+    display: grid;
+    gap: var(--space-lg);
+    border-top: 1px solid var(--line);
+  }
+  .production__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .production h2 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    max-width: 28ch;
+  }
+  .production__lead {
+    margin: 0;
+    max-width: 56ch;
+    font-family: var(--font-longform);
+    font-size: 1.1875rem;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .production__notice {
+    margin: 0;
+    padding: var(--space-md) var(--space-lg);
+    border-left: 3px solid var(--caution);
+    background: var(--surface);
+  }
+  .production__notice-label {
+    color: var(--caution);
+    margin: 0 0 0.35rem;
+    text-transform: uppercase;
+  }
+  .production__notice-body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .production__notice-body strong {
+    color: var(--caution);
+  }
+  .production__notice-body code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--paper);
+    padding: 0.1em 0.35em;
+    border: 1px solid var(--line);
+  }
+  .production__facets {
+    margin: var(--space-md) 0 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+  .production__facet {
+    margin: 0;
+    display: grid;
+    gap: var(--space-sm);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--line);
+  }
+  .production__facet dt {
+    color: var(--soft-ink);
+    margin: 0;
+  }
+  .production__facet dd {
+    margin: 0;
+  }
+  .production__facet ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.35rem;
+  }
+  .production__facet li {
+    padding-left: 1.25rem;
+    position: relative;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .production__facet li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 0.6rem;
+    height: 1px;
+    background: var(--accent);
+  }
+  .production__facet em {
+    font-style: italic;
+    color: var(--soft-ink);
+  }
+  .production__facet a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+  .production__facet a:hover,
+  .production__facet a:focus-visible {
+    border-bottom-color: transparent;
+  }
+  .production__facet code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background: var(--paper);
+    padding: 0.1em 0.3em;
+    border: 1px solid var(--line);
+  }
+</style>
