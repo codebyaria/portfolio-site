@@ -4,16 +4,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Contact"
-  description="Get in touch with Aria Nurhadi Zain for full-time remote opportunities."
+  description="Interested in working together? Aria Nurhadi Zain is open to full-time remote opportunities in web development, AI automation, and modern web architecture."
 >
   <section class="container contact" aria-labelledby="contact-title">
     <p class="label contact__eyebrow">Contact</p>
-    <h1 id="contact-title">Open to full-time remote opportunities.</h1>
+    <h1 id="contact-title">Interested in working together?</h1>
     <p class="contact__lead">
-      I am currently based in Sukoharjo, Central Java, Indonesia, and ready for a full-time remote
-      role in full-stack web development, headless CMS, or practical AI automation.
+      I'm currently open to full-time opportunities in web development, AI automation, and modern
+      web architecture. I am based in Sukoharjo, Central Java, Indonesia, and ready for a
+      fully-remote role.
     </p>
-    <ul class="contact__list">
+    <ul class="contact__list" role="list">
       <li>
         <span class="label">Email</span>
         <a href="mailto:arianurhadi81@gmail.com">arianurhadi81@gmail.com</a>
@@ -35,6 +36,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding-block: clamp(2rem, 6vw, 5rem);
     display: grid;
     gap: var(--space-xl);
+    max-width: var(--reading-width);
   }
   .contact__eyebrow {
     color: var(--accent);
@@ -46,22 +48,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: clamp(2.4rem, 6vw, 4.6rem);
     line-height: 1;
     letter-spacing: -0.045em;
-    max-width: 22ch;
   }
   .contact__lead {
     margin: 0;
-    max-width: 60ch;
-    color: var(--soft-ink);
-    font-size: 1.125rem;
+    color: var(--ink);
+    font-family: var(--font-longform);
+    font-size: 1.1875rem;
+    line-height: 1.55;
+    max-width: 56ch;
   }
   .contact__list {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: var(--space-lg) 0 0;
     display: grid;
     gap: var(--space-md);
     border-top: 1px solid var(--line);
-    padding-top: var(--space-lg);
   }
   .contact__list li {
     display: grid;

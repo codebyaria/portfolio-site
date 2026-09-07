@@ -130,23 +130,38 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
   .note__body {
     max-width: var(--reading-width);
   }
-  .note__body :global(h2) {
+  .note__body :global(p) {
+    font-family: var(--font-longform);
+    font-size: 1.1875rem;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  .note__body :global(h2),
+  .note__body :global(h3) {
     margin-top: var(--space-xl);
     font-family: var(--font-sans);
-    font-size: 1.5rem;
     letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .note__body :global(h2) {
+    font-size: 1.5rem;
+    border-top: 1px solid var(--line);
+    padding-top: var(--space-md);
   }
   .note__body :global(h3) {
-    margin-top: var(--space-lg);
-    font-family: var(--font-sans);
     font-size: 1.25rem;
   }
-  .note__body :global(p) {
-    line-height: 1.7;
+  .note__body :global(strong) {
+    color: var(--accent);
+    font-weight: 700;
   }
-  .note__body :global(ul) {
+  .note__body :global(ul),
+  .note__body :global(ol) {
+    font-family: var(--font-longform);
+    font-size: 1.1875rem;
     line-height: 1.7;
     padding-left: 1.25rem;
+    color: var(--ink);
   }
   .note__body :global(li) {
     margin-bottom: 0.5rem;
