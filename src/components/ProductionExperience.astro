@@ -17,15 +17,25 @@
     and maintaining production systems in a professional setting.
   </p>
 
+  <p class="production__lead">
+    The first documented entry is
+    <a href="/work/production-saas-platform/" class="production__inline-link"
+      >Production SaaS Platform: GuruInovatif (Aug 2022 – Jan 2024)</a
+    >
+    — full-stack work on source-tracking, an events feature, an affiliate programme, and the public landing
+    page. Specific retention/conversion impact is left as pending evidence rather than rounded up; the
+    confidentiality boundary (PRD 10.2) and the project's honesty rules apply to every contribution listed
+    here.
+  </p>
+
   <aside class="production__notice" role="status">
     <p class="label production__notice-label">Honesty notice</p>
     <p class="production__notice-body">
-      <strong>No production claims are published on this page yet.</strong>
-      The structure is in place so that once verified contribution blocks are filled in <code
-        >production-case-study/PENDING-FACTS.md</code
-      >, the case study can be drafted, reviewed for confidentiality, and merged. The portfolio
-      explicitly does not fabricate employer names, dates, modules, or metrics (per PRD 10.2 and the
-      project's honesty rules).
+      <strong>Production claims are bounded by evidence.</strong>
+      The first entry below is published with generic descriptions and explicit "pending evidence" markers
+      wherever a metric is not isolated to this contribution. Per PRD 10.2, no confidential code, credentials,
+      customer data, proprietary architecture, or internal business information appears here. Per the
+      project's honesty rules, anything unverified is marked pending rather than removed silently.
     </p>
   </aside>
 
@@ -100,6 +110,19 @@
     font-size: 1.1875rem;
     line-height: 1.55;
     color: var(--ink);
+  }
+  .production__lead + .production__lead {
+    margin-top: calc(-1 * var(--space-sm));
+  }
+  .production__inline-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    font-weight: 600;
+  }
+  .production__inline-link:hover,
+  .production__inline-link:focus-visible {
+    border-bottom-color: transparent;
   }
   .production__notice {
     margin: 0;
