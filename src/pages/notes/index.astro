@@ -1,32 +1,24 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const notes = [
-  {
-    title: 'Why Astro is a strong fit for content-heavy marketing websites',
-    summary:
-      'Static-first rendering, islands for interactivity, and a single TypeScript codebase that scales from landing pages to content platforms.',
-    status: 'in-development',
-  },
-  {
-    title: 'Building a headless CMS with Astro + Strapi',
-    summary:
-      'A small, typed REST client, content modeling that respects publishing rules, and structured data on every public page.',
-    status: 'in-development',
-  },
-  {
-    title: 'Automating SEO metadata with AI',
-    summary:
-      'Validate first, suggest second, never auto-publish. A pattern for safe AI SEO assistance in production CMS workflows.',
-    status: 'in-development',
-  },
-  {
-    title: 'Technical SEO checklist for modern websites',
-    summary:
-      'A practical checklist covering metadata, canonical URLs, hreflang, structured data, sitemap, robots, and Core Web Vitals.',
-    status: 'in-development',
-  },
-];
+const notes = (await getCollection('notes')).sort((a, b) => {
+  const aDate = a.data.publishedDate?.getTime() ?? 0;
+  const bDate = b.data.publishedDate?.getTime() ?? 0;
+  return bDate - aDate;
+});
+
+const statusLabels = {
+  'in-development': 'In development',
+  'self-reported': 'Self-reported',
+  published: 'Published',
+} as const;
+
+const dateFormatter = new Intl.DateTimeFormat('en-GB', {
+  year: 'numeric',
+  month: 'short',
+  day: '2-digit',
+});
 ---
 
 <BaseLayout
@@ -40,14 +32,30 @@ const notes = [
       I publish only when I have something specific to point at: a working project, a measured
       result, or a clear pattern. Drafts in progress are labelled as such.
     </p>
-    <ul class="notes__list">
+    <ul class="notes__list" role="list">
       {
         notes.map((note) => (
-          <li>
+          <li class="notes__item">
             <article>
-              <p class="label">In development</p>
-              <h2>{note.title}</h2>
-              <p>{note.summary}</p>
+              <div class="notes__meta">
+                <p class="label notes__status">{statusLabels[note.data.status]}</p>
+                {note.data.publishedDate && (
+                  <time class="label notes__date" datetime={note.data.publishedDate.toISOString()}>
+                    {dateFormatter.format(note.data.publishedDate)}
+                  </time>
+                )}
+              </div>
+              <h2>
+                <a href={`/notes/${note.data.slug}/`}>{note.data.title}</a>
+              </h2>
+              <p>{note.data.summary}</p>
+              {note.data.topics.length > 0 && (
+                <ul class="notes__topics" aria-label="Topics" role="list">
+                  {note.data.topics.map((topic) => (
+                    <li class="notes__topic label">#{topic}</li>
+                  ))}
+                </ul>
+              )}
             </article>
           </li>
         ))
@@ -85,19 +93,54 @@ const notes = [
     padding: 0;
     border-top: 1px solid var(--line);
   }
-  .notes__list li {
+  .notes__item {
     padding-block: var(--space-lg);
     border-bottom: 1px solid var(--line);
   }
-  .notes__list h2 {
+  .notes__meta {
+    display: flex;
+    gap: var(--space-md);
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+  .notes__status {
+    color: var(--caution);
+    margin: 0;
+  }
+  .notes__date {
+    color: var(--soft-ink);
+  }
+  .notes__item h2 {
     margin: 0.25rem 0 0.5rem;
     font-family: var(--font-sans);
     font-size: clamp(1.25rem, 2.4vw, 1.75rem);
     letter-spacing: -0.03em;
   }
-  .notes__list p {
+  .notes__item h2 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .notes__item h2 a:hover,
+  .notes__item h2 a:focus-visible {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .notes__item p {
     margin: 0;
     max-width: 60ch;
     color: var(--soft-ink);
+  }
+  .notes__topics {
+    list-style: none;
+    margin: var(--space-sm) 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-md);
+  }
+  .notes__topic {
+    margin: 0;
+    color: var(--accent);
   }
 </style>

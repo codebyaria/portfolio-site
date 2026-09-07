@@ -1,0 +1,83 @@
+---
+/**
+ * Technology strip (PRD 5.1).
+ *
+ * Horizontal list of seven core technologies, rendered as inline chips
+ * that scroll horizontally on narrow viewports. Each chip carries the
+ * tech name in plain text plus a small label suffix.
+ */
+
+const technologies = [
+  'Astro',
+  'TypeScript',
+  'React',
+  'Strapi',
+  'Node.js',
+  'REST APIs',
+  'AI & Automation',
+] as const;
+---
+
+<section class="tech-strip" aria-label="Technologies I work with">
+  <p class="label tech-strip__label">Stack</p>
+  <ul class="tech-strip__list" role="list">
+    {
+      technologies.map((tech, idx) => (
+        <li class="tech-strip__item">
+          <span class="tech-strip__name">{tech}</span>
+          {idx < technologies.length - 1 && (
+            <span class="tech-strip__sep" aria-hidden="true">
+              ·
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .tech-strip {
+    border-block: 1px solid var(--line);
+    background: var(--surface);
+    padding-block: var(--space-md);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tech-strip__label {
+    margin: 0;
+    padding-inline: var(--space-lg);
+    color: var(--accent);
+    font-size: 0.75rem;
+  }
+  .tech-strip__list {
+    margin: 0;
+    padding: 0 var(--space-lg);
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.5rem;
+    align-items: baseline;
+    min-width: max-content;
+  }
+  .tech-strip__item {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .tech-strip__name {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .tech-strip__sep {
+    color: var(--line);
+    font-family: var(--font-mono);
+  }
+  @media (max-width: 580px) {
+    .tech-strip__list {
+      flex-wrap: nowrap;
+    }
+  }
+</style>
