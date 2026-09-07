@@ -80,11 +80,31 @@ const languages = ['Indonesian (native)', 'English (conversational)'];
     border-top: 1px solid var(--line);
   }
   .about__copy p {
-    margin: 0 0 1rem;
+    margin: 0 0 1.125rem;
+    font-family: var(--font-longform);
+    font-size: 1.1875rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .about__copy p:last-child {
+    margin-bottom: 0;
+  }
+  .about__copy strong {
+    color: var(--accent);
+    font-weight: 700;
   }
   .about__copy a {
     color: inherit;
-    border-bottom: 1px solid currentColor;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+  }
+  .about__copy a:hover,
+  .about__copy a:focus-visible {
+    border-bottom-color: var(--accent);
+  }
+  .about__facts {
+    border-left: 1px solid var(--line);
+    padding-left: var(--space-lg);
   }
   .about__facts dl {
     margin: 0;
@@ -102,6 +122,12 @@ const languages = ['Indonesian (native)', 'English (conversational)'];
   @media (max-width: 860px) {
     .about__grid {
       grid-template-columns: 1fr;
+    }
+    .about__facts {
+      border-left: 0;
+      border-top: 1px solid var(--line);
+      padding-left: 0;
+      padding-top: var(--space-lg);
     }
   }
 </style>
