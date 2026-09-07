@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import TechnologyStrip from '../components/TechnologyStrip.astro';
 import CapabilityGrid from '../components/CapabilityGrid.astro';
 import EngineeringApproach from '../components/EngineeringApproach.astro';
+import ProductionExperience from '../components/ProductionExperience.astro';
 import { absoluteUrl } from '../lib/site.js';
 
 const siteOrigin = import.meta.env.SITE_ORIGIN ?? 'https://example.com';
@@ -11,7 +12,7 @@ const homeUrl = absoluteUrl('/', siteOrigin);
 
 <BaseLayout
   title="Aria Nurhadi Zain"
-  description="Full Stack Developer building fast, SEO-driven websites, content platforms, and automation systems."
+  description="Full Stack Developer with real production experience and a portfolio of full-stack web, content-platform, SEO, and automation work."
   canonical={homeUrl}
 >
   <section class="hero container" aria-labelledby="hero-title">
@@ -58,6 +59,8 @@ const homeUrl = absoluteUrl('/', siteOrigin);
   <CapabilityGrid />
 
   <EngineeringApproach />
+
+  <ProductionExperience />
 </BaseLayout>
 
 <style>
