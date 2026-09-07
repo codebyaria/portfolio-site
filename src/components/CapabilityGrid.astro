@@ -1,0 +1,142 @@
+---
+/**
+ * Capability grid for the homepage (PRD 5.3).
+ *
+ * Six capability tiles, each with: title, one-line description,
+ * supporting evidence (where applicable). Capability-based copy
+ * rather than skill percentages.
+ */
+
+interface Capability {
+  title: string;
+  description: string;
+  evidence: string;
+}
+
+const capabilities: Capability[] = [
+  {
+    title: 'Web Development',
+    description:
+      'Fast, responsive and maintainable web applications using modern JavaScript frameworks.',
+    evidence: 'Astro 7 · TypeScript strict · React islands',
+  },
+  {
+    title: 'Content Platforms',
+    description:
+      'Headless CMS architectures using Astro, Strapi and REST APIs with typed content adapters.',
+    evidence: 'Local Business Growth demo · content collections',
+  },
+  {
+    title: 'SEO & Performance',
+    description: 'Technical SEO, semantic HTML, structured content and performance optimization.',
+    evidence: 'hreflang · sitemap · canonical · Lighthouse job',
+  },
+  {
+    title: 'AI & Automation',
+    description: 'API-driven workflows that reduce repetitive operational and content tasks.',
+    evidence: 'AI SEO Content Pipeline · webhook handler · Zod guard',
+  },
+  {
+    title: 'Data & APIs',
+    description: 'Data processing, REST APIs, dashboards and third-party integrations.',
+    evidence: 'SEO Intelligence Dashboard · simulated GSC/GA4/Clarity',
+  },
+  {
+    title: 'Production Engineering',
+    description: 'Debugging, deployment, analytics, Git workflows and continuous improvement.',
+    evidence: 'GitHub Actions · CI · threat-model docs',
+  },
+];
+---
+
+<section class="capabilities container" aria-labelledby="capabilities-title">
+  <header class="capabilities__header">
+    <p class="label capabilities__eyebrow">What I build</p>
+    <h2 id="capabilities-title" class="capabilities__title">Capability areas I work across</h2>
+    <p class="capabilities__lead">
+      I work across the stack that an agency needs to deliver and maintain a digital product. Each
+      area below maps to work in the
+      <a href="/work/">selected work</a>
+      page.
+    </p>
+  </header>
+
+  <ol class="capabilities__grid" role="list">
+    {
+      capabilities.map((cap) => (
+        <li class="capability-card">
+          <h3 class="capability-card__title">{cap.title}</h3>
+          <p class="capability-card__description">{cap.description}</p>
+          <p class="capability-card__evidence label">
+            <span aria-hidden="true">↳ </span>
+            {cap.evidence}
+          </p>
+        </li>
+      ))
+    }
+  </ol>
+</section>
+
+<style>
+  .capabilities {
+    padding-block: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    gap: var(--space-xl);
+    border-top: 1px solid var(--line);
+  }
+  .capabilities__header {
+    display: grid;
+    gap: var(--space-sm);
+    max-width: 60ch;
+  }
+  .capabilities__eyebrow {
+    margin: 0;
+    color: var(--accent);
+  }
+  .capabilities__title {
+    margin: 0;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  .capabilities__lead {
+    margin: 0;
+    color: var(--soft-ink);
+    font-size: 1.0625rem;
+  }
+  .capabilities__grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .capability-card {
+    background: var(--paper);
+    padding: var(--space-lg);
+    display: grid;
+    gap: var(--space-sm);
+    align-content: start;
+  }
+  .capability-card__title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .capability-card__description {
+    margin: 0;
+    color: var(--soft-ink);
+    line-height: 1.5;
+  }
+  .capability-card__evidence {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+  }
+</style>

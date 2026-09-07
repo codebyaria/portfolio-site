@@ -1,0 +1,150 @@
+---
+/**
+ * Engineering Approach section (PRD 5.4).
+ *
+ * Six-step loop presented as a horizontal flow on desktop, vertical
+ * stack on mobile. Each step has a one-line label so the loop is
+ * understandable from a glance, with a supporting explanation beneath.
+ */
+
+const steps = [
+  { id: 'understand', label: 'Understand', note: 'business problem' },
+  { id: 'design', label: 'Design', note: 'architecture & data boundaries' },
+  { id: 'build', label: 'Build', note: 'smallest maintainable solution' },
+  { id: 'validate', label: 'Validate', note: 'functionality & quality' },
+  { id: 'measure', label: 'Measure', note: 'evidence over assumption' },
+  { id: 'improve', label: 'Improve', note: 'iterate on what the data shows' },
+] as const;
+---
+
+<section class="approach container" aria-labelledby="approach-title">
+  <header class="approach__header">
+    <p class="label approach__eyebrow">Engineering approach</p>
+    <h2 id="approach-title" class="approach__title">
+      I start from the problem, not the technology.
+    </h2>
+    <p class="approach__lead">
+      Every project I take on goes through the same loop. The order matters more than the tools.
+    </p>
+  </header>
+
+  <ol class="approach__flow" aria-label="Engineering workflow">
+    {
+      steps.map((step, idx) => (
+        <li class="approach-step" aria-posinset={idx + 1} aria-setsize={steps.length}>
+          <span class="approach-step__num" aria-hidden="true">
+            {String(idx + 1).padStart(2, '0')}
+          </span>
+          <span class="approach-step__label">{step.label}</span>
+          <span class="approach-step__note label">{step.note}</span>
+          {idx < steps.length - 1 && (
+            <span class="approach-step__arrow" aria-hidden="true">
+              ↓
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+
+  <p class="approach__closing">
+    I start with the business problem, define the architecture and data boundaries, build the
+    smallest maintainable solution, validate functionality and quality, then improve based on
+    evidence.
+  </p>
+</section>
+
+<style>
+  .approach {
+    padding-block: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    gap: var(--space-xl);
+    border-top: 1px solid var(--line);
+  }
+  .approach__header {
+    display: grid;
+    gap: var(--space-sm);
+    max-width: 60ch;
+  }
+  .approach__eyebrow {
+    margin: 0;
+    color: var(--accent);
+  }
+  .approach__title {
+    margin: 0;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  .approach__lead {
+    margin: 0;
+    color: var(--soft-ink);
+    font-size: 1.0625rem;
+  }
+  .approach__flow {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    align-items: start;
+  }
+  @media (max-width: 768px) {
+    .approach__flow {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+  }
+  .approach-step {
+    display: grid;
+    gap: var(--space-xs);
+    padding: var(--space-md);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    position: relative;
+  }
+  .approach-step__num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+  .approach-step__label {
+    font-weight: 700;
+    font-size: 1.0625rem;
+    letter-spacing: -0.01em;
+  }
+  .approach-step__note {
+    margin: 0;
+    color: var(--soft-ink);
+    font-size: 0.8125rem;
+  }
+  .approach-step__arrow {
+    position: absolute;
+    right: var(--space-md);
+    bottom: -0.9rem;
+    background: var(--paper);
+    padding: 0 var(--space-xs);
+    color: var(--accent);
+    font-family: var(--font-mono);
+    z-index: 1;
+  }
+  @media (max-width: 768px) {
+    .approach-step__arrow {
+      right: 50%;
+      transform: translateX(50%);
+      bottom: -1.4rem;
+    }
+  }
+  .approach__closing {
+    margin: 0;
+    max-width: 65ch;
+    color: var(--soft-ink);
+    font-size: 1rem;
+    line-height: 1.6;
+    border-left: 2px solid var(--accent);
+    padding-left: var(--space-md);
+  }
+</style>

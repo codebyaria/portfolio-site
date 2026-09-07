@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TechnologyStrip from '../components/TechnologyStrip.astro';
+import CapabilityGrid from '../components/CapabilityGrid.astro';
+import EngineeringApproach from '../components/EngineeringApproach.astro';
 import { absoluteUrl } from '../lib/site.js';
 
 const siteOrigin = import.meta.env.SITE_ORIGIN ?? 'https://example.com';
@@ -8,14 +11,15 @@ const homeUrl = absoluteUrl('/', siteOrigin);
 
 <BaseLayout
   title="Aria Nurhadi Zain"
-  description="Full-stack web developer with agency-stack compatibility, visual orientation, and practical automation interest."
+  description="Full Stack Developer building fast, SEO-driven websites, content platforms, and automation systems."
   canonical={homeUrl}
 >
   <section class="hero container" aria-labelledby="hero-title">
     <p class="hero__eyebrow label">Aria Nurhadi Zain · Full-stack Web Developer</p>
-    <h1 id="hero-title" class="hero__title">
-      Building fast, growth-focused web experiences and practical automation.
-    </h1>
+    <h1 id="hero-title" class="hero__title">Full Stack Developer</h1>
+    <p class="hero__subheadline">
+      Building fast, SEO-driven websites, content platforms, and automation systems.
+    </p>
     <p class="hero__support">
       I combine full-stack development, SEO and analytics awareness, visual judgment, and
       production-minded delivery to build digital products that support real business goals.
@@ -26,10 +30,9 @@ const homeUrl = absoluteUrl('/', siteOrigin);
         GitHub ↗
       </a>
     </div>
-    <p class="hero__status label" aria-live="polite">
-      Provisional positioning · Evidence review pending
-    </p>
   </section>
+
+  <TechnologyStrip />
 
   <section class="status-bar container" aria-label="Current state">
     <dl>
@@ -51,6 +54,10 @@ const homeUrl = absoluteUrl('/', siteOrigin);
       </div>
     </dl>
   </section>
+
+  <CapabilityGrid />
+
+  <EngineeringApproach />
 </BaseLayout>
 
 <style>
@@ -68,16 +75,24 @@ const homeUrl = absoluteUrl('/', siteOrigin);
     margin: 0;
     font-family: var(--font-sans);
     font-weight: 700;
-    line-height: 1;
+    line-height: 0.95;
     letter-spacing: -0.045em;
-    font-size: clamp(2.4rem, 6vw, 4.6rem);
-    max-width: 24ch;
+    font-size: clamp(2.6rem, 6.5vw, 5rem);
+    max-width: 14ch;
+  }
+  .hero__subheadline {
+    margin: 0;
+    max-width: 48ch;
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    line-height: 1.35;
+    color: var(--ink);
+    font-weight: 500;
   }
   .hero__support {
     margin: 0;
     max-width: 52ch;
     color: var(--soft-ink);
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
   }
   .hero__actions {
     display: flex;

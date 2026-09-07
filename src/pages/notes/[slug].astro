@@ -1,0 +1,176 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes');
+  return notes.map((note) => ({
+    params: { slug: note.data.slug },
+    props: { note },
+  }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+
+const statusLabels = {
+  'in-development': 'In development',
+  'self-reported': 'Self-reported',
+  published: 'Published',
+} as const;
+
+const dateFormatter = new Intl.DateTimeFormat('en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: '2-digit',
+});
+---
+
+<BaseLayout
+  title={note.data.title}
+  description={note.data.summary}
+  canonical={`/notes/${note.data.slug}/`}
+>
+  <article class="note container" aria-labelledby="note-title">
+    <header class="note__header">
+      <p class="label note__eyebrow">
+        <a href="/notes/">Notes</a> · {note.data.slug}
+      </p>
+      <h1 id="note-title" class="note__title">{note.data.title}</h1>
+      <p class="note__summary">{note.data.summary}</p>
+      <div class="note__meta">
+        <p class="label note__status">{statusLabels[note.data.status]}</p>
+        {
+          note.data.publishedDate && (
+            <time class="label note__date" datetime={note.data.publishedDate.toISOString()}>
+              {dateFormatter.format(note.data.publishedDate)}
+            </time>
+          )
+        }
+        {
+          note.data.topics.length > 0 && (
+            <ul class="note__topics" aria-label="Topics" role="list">
+              {note.data.topics.map((topic) => (
+                <li class="note__topic label">#{topic}</li>
+              ))}
+            </ul>
+          )
+        }
+      </div>
+    </header>
+
+    <div class="note__body prose">
+      <Content />
+    </div>
+
+    <footer class="note__footer">
+      <a href="/notes/">← All notes</a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .note {
+    padding-block: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    gap: var(--space-xl);
+  }
+  .note__header {
+    display: grid;
+    gap: var(--space-md);
+    max-width: 65ch;
+  }
+  .note__eyebrow {
+    margin: 0;
+    color: var(--accent);
+  }
+  .note__eyebrow a {
+    color: inherit;
+  }
+  .note__title {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  .note__summary {
+    margin: 0;
+    font-size: 1.125rem;
+    color: var(--soft-ink);
+    line-height: 1.5;
+  }
+  .note__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: baseline;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--line);
+  }
+  .note__status {
+    color: var(--caution);
+    margin: 0;
+  }
+  .note__date {
+    color: var(--soft-ink);
+  }
+  .note__topics {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-md);
+  }
+  .note__topic {
+    margin: 0;
+    color: var(--accent);
+  }
+  .note__body {
+    max-width: var(--reading-width);
+  }
+  .note__body :global(h2) {
+    margin-top: var(--space-xl);
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+  .note__body :global(h3) {
+    margin-top: var(--space-lg);
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+  }
+  .note__body :global(p) {
+    line-height: 1.7;
+  }
+  .note__body :global(ul) {
+    line-height: 1.7;
+    padding-left: 1.25rem;
+  }
+  .note__body :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  .note__body :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--surface);
+    padding: 0.1em 0.35em;
+    border: 1px solid var(--line);
+  }
+  .note__body :global(a) {
+    color: var(--accent);
+  }
+  .note__footer {
+    border-top: 1px solid var(--line);
+    padding-top: var(--space-md);
+  }
+  .note__footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .note__footer a:hover,
+  .note__footer a:focus-visible {
+    text-decoration: underline;
+  }
+</style>
