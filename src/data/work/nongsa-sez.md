@@ -2,10 +2,8 @@
 title: Nongsa Special Economic Zone (SEZ)
 slug: nongsa-sez
 summary: >-
-  Mobile and Cloud Developer role at Nongsa Special Economic Zone (SEZ), Sep
-  2021 – Jan 2022. Workplace entry based on the provided LinkedIn profile
-  export. Tech details are intentionally broad because the source does not
-  list specific languages, frameworks, cloud vendors, or shipped metrics.
+  Mobile and Cloud Developer role at Nongsa Special Economic Zone (SEZ),
+  Sep 2021 – Jan 2022 in Batam, Indonesia.
 classification: production
 category: 'workplace'
 role: Mobile and Cloud Developer

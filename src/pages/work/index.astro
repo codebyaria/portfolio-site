@@ -7,41 +7,42 @@ type Category = 'workplace' | 'project' | 'recurring';
 
 const all = await getCollection('work');
 
+const workplaceItems = all
+  .filter((p) => p.data.category === 'workplace')
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+const projectItems = all
+  .filter((p) => p.data.category === 'project' && p.data.classification !== 'client-work')
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
 const groups: { id: Category; label: string; intro: string; items: typeof all }[] = [
   {
-    id: 'workplace',
-    label: 'Journey',
-    intro: 'Full-time and contract roles — real production systems shipped with accountability.',
-    items: all.filter((p) => p.data.category === 'workplace'),
-  },
-  {
     id: 'project',
-    label: 'Selected Work',
-    intro: 'Project-level deliverables — portfolio demos, concept work, in-development pieces.',
-    items: all.filter((p) => p.data.category === 'project'),
+    label: 'Featured builds',
+    intro:
+      'Project-level examples across modern web, CMS/API, automation, dashboard, and earlier Laravel work.',
+    items: projectItems,
   },
   {
-    id: 'recurring',
-    label: 'Ongoing Practice',
-    intro: 'Recurring patterns of work across multiple engagements — no single deliverable.',
-    items: all.filter((p) => p.data.category === 'recurring'),
+    id: 'workplace',
+    label: 'Workplaces',
+    intro: 'Full-time and contract roles, shown as a compact career timeline.',
+    items: workplaceItems,
   },
 ];
 
-const totalCount = all.length;
+const totalCount = groups.reduce((count, group) => count + group.items.length, 0);
 ---
 
 <BaseLayout
   title="Work"
-  description="Selected work, classified by evidence status and grouped by category. No fabricated outcomes."
+  description="Selected work across web applications, content platforms, SEO, automation, and production roles."
 >
   <section class="container work-page" aria-labelledby="work-title">
     <p class="label work-page__eyebrow">Selected work · {totalCount} entries</p>
-    <h1 id="work-title">What I have been building</h1>
+    <h1 id="work-title">Web apps, automation, and production roles.</h1>
     <p class="work-page__intro">
-      Each entry is classified. Grouped below by category — workplace roles, project deliverables,
-      and recurring practice patterns stay distinct. No metric, client outcome, or screenshot
-      appears here until evidence review confirms it.
+      A curated view of project builds and workplace experience across Laravel, PHP, WordPress,
+      Next.js, SEO, APIs, and practical AI-assisted workflows.
     </p>
 
     {
@@ -88,7 +89,7 @@ const totalCount = all.length;
   .work-page__group {
     display: grid;
     gap: var(--space-md);
-    padding-top: var(--space-xl);
+    padding-top: var(--space-lg);
     border-top: 1px solid var(--line);
   }
   .work-page__group-header {
@@ -112,7 +113,9 @@ const totalCount = all.length;
     color: var(--soft-ink);
   }
   .work-page__list {
-    border-top: 1px solid var(--line);
-    margin-top: var(--space-md);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-sm);
   }
 </style>
