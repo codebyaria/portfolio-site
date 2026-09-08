@@ -1,16 +1,27 @@
 ---
+interface Props {
+  lang?: 'en' | 'id';
+}
+
+const { lang = 'en' } = Astro.props;
+const isId = lang === 'id';
+const prefix = isId ? '/id' : '';
 const links = [
-  { href: '/', label: 'Home' },
-  { href: '/work/', label: 'Work' },
-  { href: '/about/', label: 'About' },
-  { href: '/notes/', label: 'Writing' },
-  { href: '/contact/', label: 'Contact' },
+  { href: `${prefix}/`, label: isId ? 'Beranda' : 'Home' },
+  { href: `${prefix}/work/`, label: isId ? 'Karya' : 'Work' },
+  { href: `${prefix}/about/`, label: isId ? 'Tentang' : 'About' },
+  { href: '/notes/', label: isId ? 'Tulisan' : 'Writing' },
+  { href: `${prefix}/contact/`, label: isId ? 'Kontak' : 'Contact' },
+];
+const languageLinks = [
+  { href: '/', label: 'EN', current: !isId },
+  { href: '/id/', label: 'ID', current: isId },
 ];
 ---
 
 <header class="site-header">
   <div class="container site-header__row">
-    <a class="site-header__mark" href="/" aria-label="Aria Nurhadi Zain home">
+    <a class="site-header__mark" href={isId ? '/id/' : '/'} aria-label="Aria Nurhadi Zain home">
       <picture class="site-header__logo">
         <source srcset="/images/aria-logo.webp" type="image/webp" />
         <img src="/images/aria-logo.png" alt="" width="512" height="251" decoding="async" />
@@ -27,9 +38,24 @@ const links = [
         }
       </ul>
     </nav>
+    <nav class="site-header__language" aria-label="Language">
+      <ul>
+        {
+          languageLinks.map((link) => (
+            <li>
+              <a href={link.href} aria-current={link.current ? 'page' : undefined}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
     <p class="site-header__meta">
       <span>Full-time · Remote</span>
-      <span>Sukoharjo, Central Java, Indonesia</span>
+      <span
+        >{isId ? 'Sukoharjo, Jawa Tengah, Indonesia' : 'Sukoharjo, Central Java, Indonesia'}</span
+      >
     </p>
   </div>
 </header>
@@ -41,7 +67,7 @@ const links = [
   }
   .site-header__row {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
     align-items: center;
     gap: clamp(1rem, 3vw, 3rem);
     min-height: 76px;
@@ -61,12 +87,15 @@ const links = [
     width: 100%;
     height: auto;
   }
-  .site-header__nav ul {
+  .site-header__nav ul,
+  .site-header__language ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+  }
+  .site-header__nav ul {
     gap: 0.25rem 1.5rem;
     justify-content: center;
   }
@@ -82,6 +111,26 @@ const links = [
   .site-header__nav a:focus-visible {
     border-bottom-color: var(--accent);
   }
+  .site-header__language ul {
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+  .site-header__language a {
+    display: inline-flex;
+    min-height: 32px;
+    align-items: center;
+    padding-inline: 0.45rem;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: var(--soft-ink);
+    font-weight: 700;
+  }
+  .site-header__language a[aria-current='page'] {
+    border-color: var(--line);
+    color: var(--ink);
+  }
   .site-header__meta {
     display: grid;
     gap: 0.15rem;
@@ -92,13 +141,25 @@ const links = [
     letter-spacing: 0.06em;
     color: var(--soft-ink);
   }
-  @media (max-width: 860px) {
+  @media (max-width: 980px) {
     .site-header__row {
-      grid-template-columns: auto 1fr;
+      grid-template-columns: auto 1fr auto;
     }
     .site-header__meta {
       grid-column: 1 / -1;
       text-align: left;
+    }
+  }
+  @media (max-width: 620px) {
+    .site-header__row {
+      grid-template-columns: 1fr auto;
+      padding-block: var(--space-sm);
+    }
+    .site-header__nav {
+      grid-column: 1 / -1;
+    }
+    .site-header__nav ul {
+      justify-content: flex-start;
     }
   }
 </style>

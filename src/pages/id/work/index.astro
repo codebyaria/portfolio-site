@@ -1,0 +1,150 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
+
+const all = await getCollection('work');
+const bySlug = new Map(all.map((entry) => [entry.data.slug, entry]));
+const pick = (slugs: string[]) =>
+  slugs.map((slug) => bySlug.get(slug)).filter(Boolean) as typeof all;
+
+const groups = [
+  {
+    label: 'Project pilihan',
+    intro:
+      'Project-level work untuk marketplace, logistics, POS, booking, CMS/API, automation, dan dashboard.',
+    items: pick([
+      'takdol-marketplace-ecosystem',
+      'goband-logistics-command-center',
+      'ramoo-multi-store-pos-platform',
+      'abc-auto-care-booking-experience',
+      'local-business-growth',
+      'ai-seo-content-pipeline',
+      'seo-intelligence-dashboard',
+    ]),
+  },
+  {
+    label: 'Project analytics',
+    intro:
+      'Monitoring dan analytics operations yang bisa dikembangkan menjadi case study lebih lengkap.',
+    items: pick(['cctv-trolley-analytics']),
+  },
+  {
+    label: 'Pengalaman kerja',
+    intro: 'Role full-time dan contract dipisahkan dari project build supaya timeline tetap jelas.',
+    items: pick(['merdeka-ai', 'object-expression-sdn-bhd', 'hasnur-centre', 'nongsa-sez']),
+  },
+  {
+    label: 'Project awal',
+    intro:
+      'Project Laravel, PHP, web, dan mobile dari portfolio lama, disimpan sebagai entry ringkas.',
+    items: pick(['early-laravel-web-projects']),
+  },
+  {
+    label: 'Kapabilitas berulang',
+    intro:
+      'Pekerjaan pendukung yang sering masuk ke delivery: WordPress, analytics, performance, backup, dan automation.',
+    items: pick([
+      'wordpress-client-work',
+      'analytics-integrations',
+      'security-performance-backup',
+      'n8n-automations',
+    ]),
+  },
+].filter((group) => group.items.length > 0);
+
+const totalCount = groups.reduce((count, group) => count + group.items.length, 0);
+---
+
+<BaseLayout
+  lang="id"
+  title="Karya"
+  description="Karya pilihan Aria Nurhadi Zain di web applications, content platform, SEO, automation, dan production roles."
+  canonical="/id/work/"
+>
+  <section class="container work-page" aria-labelledby="work-title">
+    <p class="label work-page__eyebrow">Karya pilihan · {totalCount} entries</p>
+    <h1 id="work-title">Web apps, automation, dan pengalaman production.</h1>
+    <p class="work-page__intro">
+      Tampilan terkurasi dari project build dan pengalaman kerja lintas Laravel, PHP, WordPress,
+      Next.js, SEO, API, dan workflow automation.
+    </p>
+
+    {
+      groups.map((group) => (
+        <div class="work-page__group">
+          <header class="work-page__group-header">
+            <h2 class="work-page__group-title">{group.label}</h2>
+            <p class="work-page__group-intro">{group.intro}</p>
+          </header>
+          <div class="work-page__list">
+            {group.items.map((project) => (
+              <ProjectCard project={project} />
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .work-page {
+    padding-block: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    gap: var(--space-xl);
+  }
+  .work-page__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .work-page h1 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+    max-width: 24ch;
+  }
+  .work-page__intro,
+  .work-page__group-intro {
+    margin: 0;
+    max-width: 62ch;
+    color: var(--soft-ink);
+    line-height: 1.5;
+  }
+  .work-page__group {
+    display: grid;
+    gap: var(--space-md);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--line);
+  }
+  .work-page__group-header {
+    display: grid;
+    gap: 0.35rem;
+  }
+  @media (min-width: 820px) {
+    .work-page__group-header {
+      grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.75fr);
+      align-items: end;
+    }
+  }
+  .work-page__group-title {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .work-page__group-intro {
+    font-family: var(--font-longform);
+    font-size: 1rem;
+  }
+  .work-page__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-sm);
+  }
+</style>

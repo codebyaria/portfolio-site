@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const languages = ['Indonesia (native)', 'English (conversational)'];
+---
+
+<BaseLayout
+  lang="id"
+  title="Tentang"
+  description="Tentang Aria Nurhadi Zain: full-stack web developer dengan pengalaman production, delivery WordPress, dan workflow automation."
+  canonical="/id/about/"
+>
+  <section class="container about" aria-labelledby="about-title">
+    <p class="label about__eyebrow">Tentang</p>
+    <h1 id="about-title">Full-stack developer dengan agency mindset.</h1>
+    <div class="about__grid">
+      <div class="about__copy prose">
+        <p>
+          Saya <strong>Aria Nurhadi Zain</strong>, full-stack web developer berbasis di Sukoharjo,
+          Jawa Tengah, Indonesia. Saya tertarik dengan agency work karena menggabungkan web
+          development, visual craft, dan kebutuhan bisnis yang nyata.
+        </p>
+        <p>
+          Background saya mencakup Laravel dan PHP application work, WordPress dan Elementor client
+          delivery, hosting operations, analytics integration, SEO, API, dan workflow automation.
+        </p>
+        <p>
+          Portfolio ini menampilkan production roles, client delivery, dan project build yang
+          relevan untuk modern web, dashboard, marketplace, logistics, POS, dan practical AI
+          automation.
+        </p>
+      </div>
+      <aside class="about__facts" aria-label="Fakta singkat">
+        <dl>
+          <div>
+            <dt class="label">Lokasi</dt>
+            <dd>Sukoharjo, Jawa Tengah, Indonesia</dd>
+          </div>
+          <div>
+            <dt class="label">Tujuan</dt>
+            <dd>Terbuka untuk full-time remote employment</dd>
+          </div>
+          <div>
+            <dt class="label">Bahasa</dt>
+            <dd>{languages.join(' · ')}</dd>
+          </div>
+          <div>
+            <dt class="label">Fokus portfolio</dt>
+            <dd>Production roles · project builds · practical automation</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about {
+    padding-block: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    gap: var(--space-xl);
+  }
+  .about__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .about h1 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+    max-width: 22ch;
+  }
+  .about__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--line);
+  }
+  .about__copy p {
+    margin: 0 0 1.125rem;
+    font-family: var(--font-longform);
+    font-size: 1.1875rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .about__copy p:last-child {
+    margin-bottom: 0;
+  }
+  .about__copy strong {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .about__facts {
+    border-left: 1px solid var(--line);
+    padding-left: var(--space-lg);
+  }
+  .about__facts dl {
+    margin: 0;
+    display: grid;
+    gap: var(--space-md);
+  }
+  .about__facts dt {
+    color: var(--soft-ink);
+    margin-bottom: 0.15rem;
+  }
+  .about__facts dd {
+    margin: 0;
+    font-weight: 600;
+  }
+  @media (max-width: 760px) {
+    .about__grid {
+      grid-template-columns: 1fr;
+    }
+    .about__facts {
+      border-left: 0;
+      border-top: 1px solid var(--line);
+      padding-left: 0;
+      padding-top: var(--space-lg);
+    }
+  }
+</style>

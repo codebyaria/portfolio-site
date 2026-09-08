@@ -6,7 +6,17 @@ const SITE = import.meta.env.SITE_ORIGIN ?? 'https://example.com';
 export const GET: APIRoute = async ({ site }) => {
   const origin = (site?.toString().replace(/\/$/, '') ?? SITE).replace(/\/$/, '');
 
-  const staticPaths = ['/', '/work/', '/about/', '/notes/', '/contact/'];
+  const staticPaths = [
+    '/',
+    '/work/',
+    '/about/',
+    '/notes/',
+    '/contact/',
+    '/id/',
+    '/id/work/',
+    '/id/about/',
+    '/id/contact/',
+  ];
 
   const workEntries = await getCollection('work');
   const noteEntries = await getCollection('notes');

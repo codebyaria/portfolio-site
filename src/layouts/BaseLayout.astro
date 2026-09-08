@@ -7,15 +7,16 @@ interface Props {
   title: string;
   description: string;
   canonical?: string;
+  lang?: 'en' | 'id';
 }
 
-const { title, description, canonical } = Astro.props;
+const { title, description, canonical, lang = 'en' } = Astro.props;
 const siteTitle = 'Aria Nurhadi Zain';
 const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,11 +33,11 @@ const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
     <title>{fullTitle}</title>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <SiteHeader />
+    <a class="skip-link" href="#main">{lang === 'id' ? 'Lewati ke konten' : 'Skip to content'}</a>
+    <SiteHeader lang={lang} />
     <main id="main">
       <slot />
     </main>
-    <SiteFooter />
+    <SiteFooter lang={lang} />
   </body>
 </html>
