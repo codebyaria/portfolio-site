@@ -21,7 +21,7 @@ const ROUTES = [
   { name: 'notes-index', path: '/notes/' },
   { name: 'about', path: '/about/' },
   { name: 'contact', path: '/contact/' },
-  { name: 'production-detail', path: '/work/production-saas-platform/' },
+  { name: 'production-detail', path: '/work/hasnur-centre/' },
   { name: 'object-expression-detail', path: '/work/object-expression-sdn-bhd/' },
 ];
 

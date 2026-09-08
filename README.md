@@ -35,10 +35,10 @@ entries.
 - `/` homepage with hero, technology strip, capability grid, engineering
   approach loop, selected work, and Production Experience section.
 - `/work/` index + `/work/[slug]/` detail pages (Content Collection).
-  7 work entries: 3 portfolio demos + 4 Production Experience entries
-  (GuruInovatif, Object Expression, WordPress, Analytics, Security,
-  n8n) all with honesty labels and explicit "Pending evidence" markers
-  where metrics are not isolated.
+  11 work entries: 3 portfolio demos + 4 workplace entries + 4 recurring/client-work entries
+  (Nongsa SEZ, Hasnur Centre / Guruinovatif.id, Object Expression, Merdeka-AI,
+  WordPress, Analytics, Security, n8n) all with honesty labels and explicit
+  "Pending evidence" markers where metrics are not isolated.
 - `/about/`, `/notes/`, `/contact/`.
 - Sitemap, robots.txt, canonical URLs, Open Graph, Twitter card.
 - `noindex` on draft and contact surfaces where appropriate.
@@ -89,8 +89,8 @@ build — no Node adapter needed.
 
 ## Production Experience
 
-The `/work/production-saas-platform/` (GuruInovatif), `/work/object-expression-sdn-bhd/`,
-`/work/wordpress-client-work/`, `/work/analytics-integrations/`,
+The `/work/nongsa-sez/`, `/work/hasnur-centre/`, `/work/object-expression-sdn-bhd/`,
+`/work/merdeka-ai/`, `/work/wordpress-client-work/`, `/work/analytics-integrations/`,
 `/work/security-performance-backup/`, and `/work/n8n-automations/`
 entries are classified as **production** or **client-work** /
 **personal-project**. Per PRD 10.2, no confidential code, credentials,
