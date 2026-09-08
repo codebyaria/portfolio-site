@@ -1,0 +1,143 @@
+---
+import { getCollection } from 'astro:content';
+
+const selectedOrder = [
+  'local-business-growth',
+  'ai-seo-content-pipeline',
+  'seo-intelligence-dashboard',
+] as const;
+
+const allProjects = await getCollection('work');
+const selectedProjects = selectedOrder
+  .map((slug) => allProjects.find((project) => project.data.slug === slug))
+  .filter((project): project is NonNullable<typeof project> => Boolean(project));
+---
+
+<section class="selected-projects container" aria-labelledby="selected-projects-title">
+  <div class="selected-projects__header">
+    <div>
+      <p class="selected-projects__eyebrow label">Selected projects</p>
+      <h2 id="selected-projects-title">Project builds worth opening first.</h2>
+    </div>
+    <a class="selected-projects__cta" href="/work/">View all work</a>
+  </div>
+
+  <div class="selected-projects__grid">
+    {
+      selectedProjects.map((project, index) => (
+        <article class="selected-project">
+          <p class="selected-project__number label">0{index + 1}</p>
+          <h3>
+            <a href={`/work/${project.data.slug}/`}>{project.data.title}</a>
+          </h3>
+          <p>{project.data.summary}</p>
+          <ul class="selected-project__stack" aria-label={`${project.data.title} stack`}>
+            {project.data.stack.slice(0, 4).map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .selected-projects {
+    padding-block: clamp(2.75rem, 7vw, 6.5rem);
+    display: grid;
+    gap: var(--space-lg);
+    border-top: 1px solid var(--line);
+  }
+  .selected-projects__header {
+    display: grid;
+    gap: var(--space-md);
+    align-items: end;
+  }
+  @media (min-width: 760px) {
+    .selected-projects__header {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+  }
+  .selected-projects__eyebrow {
+    margin: 0 0 0.5rem;
+    color: var(--accent);
+  }
+  .selected-projects h2 {
+    margin: 0;
+    max-width: 18ch;
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .selected-projects__cta {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: 1rem;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .selected-projects__cta:hover,
+  .selected-projects__cta:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .selected-projects__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-md);
+  }
+  .selected-project {
+    display: grid;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+    border: 1px solid var(--line);
+    background: var(--paper);
+    min-height: 16rem;
+  }
+  .selected-project__number {
+    margin: 0;
+    color: var(--accent);
+  }
+  .selected-project h3 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  .selected-project h3 a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .selected-project h3 a:hover,
+  .selected-project h3 a:focus-visible {
+    color: var(--accent);
+  }
+  .selected-project p:not(.label) {
+    margin: 0;
+    color: var(--soft-ink);
+    line-height: 1.5;
+  }
+  .selected-project__stack {
+    align-self: end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin: var(--space-sm) 0 0;
+    padding: 0;
+  }
+  .selected-project__stack li {
+    border: 1px solid var(--line);
+    padding: 0.3rem 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--soft-ink);
+  }
+</style>

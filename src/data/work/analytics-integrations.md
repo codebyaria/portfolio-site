@@ -3,8 +3,7 @@ title: Analytics Integrations
 slug: analytics-integrations
 summary: Recurring analytics integration work across multiple projects —
   GA4, Google Search Console, Meta Pixel, TikTok Pixel, Google Ads,
-  Microsoft Clarity, and Hotjar. Generic case study with honest
-  "pending evidence" markers where specific outcomes are not isolated.
+  Microsoft Clarity, and Hotjar. Generic case study with clear scope notes where specific outcomes are not isolated.
 classification: production
 category: 'recurring'
 role: Web Developer with analytics focus
@@ -54,8 +53,7 @@ specific sources.
 Manager; wired the base pageview and outbound-click events
 through Tag Manager; verified events in GA4 DebugView.
 
-**Result**: Pending evidence — no isolated metric attributable to
-this contribution.
+**Result**: No standalone metric is published for this contribution.
 
 ### 2. Ad-platform pixel and conversion API
 
@@ -67,7 +65,7 @@ conversion attribution, not just browser-side pixel events.
 - Events API, and Google Ads conversion tracking. Validated
   deduplicated events server-side.
 
-**Result**: Pending evidence.
+**Result**: No standalone metric is published.
 
 ### 3. Behaviour analytics setup
 
@@ -78,7 +76,7 @@ users behave a certain way on a page.
 projects to capture session replays and heatmaps, with consent
 mode for EU traffic where required.
 
-**Result**: Pending evidence.
+**Result**: No standalone metric is published.
 
 ## Outcome
 
@@ -86,8 +84,8 @@ Set up and maintained analytics integrations across multiple
 projects spanning GA4, Search Console, Tag Manager, Meta Pixel
 and Conversions API, TikTok Pixel and Events API, Google Ads,
 Clarity, and Hotjar. Specific conversion lift, attribution
-accuracy, or session-replay findings not isolated to this
-contribution; left as pending evidence rather than rounded up.
+accuracy, or session-replay findings are not published as standalone
+metrics for this cross-project entry.
 
 ## Evidence
 

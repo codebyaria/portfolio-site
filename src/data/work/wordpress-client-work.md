@@ -3,8 +3,7 @@ title: Virtual Office Jakarta
 slug: wordpress-client-work
 summary: WordPress + Elementor build and ongoing maintenance for an
   Indonesian virtual-office services company. Single-client engagement
-  with explicit "pending evidence" markers where specific outcomes are
-  not isolated to this contribution.
+  focused on delivery scope rather than unattributed performance claims.
 classification: client-work
 category: 'project'
 role: WordPress Developer
@@ -30,7 +29,7 @@ Indonesian virtual-office services company — a single-client WordPress
 - Elementor engagement. The site uses WordPress with an Elementor-built
   front end, configured for the virtual-office industry and the client
   brand identity. The site is publicly live; specific visitor / conversion
-  impact attributable to this contribution is left as pending evidence.
+  impact attributable to this contribution is not published as a standalone metric.
 
 ## Dates and work arrangement
 
@@ -53,8 +52,7 @@ business and is editable by non-technical staff after hand-off.
 core pages (home, services, about, contact) using Elementor
 templates customised to the client brand.
 
-**Result**: Pending evidence — no isolated metric attributable to
-this contribution.
+**Result**: No standalone metric is published for this contribution.
 
 ### 2. Hosting and domain hand-off
 
@@ -65,7 +63,7 @@ hosting, DNS, and SSL on their own.
 pointed the domain, and installed SSL. Documented access for the
 client.
 
-**Result**: Pending evidence.
+**Result**: No standalone metric is published.
 
 ### 3. Maintenance and updates
 
@@ -75,14 +73,13 @@ stability.
 **Action**: Provided scheduled maintenance for plugin, theme, and
 WordPress core updates, plus content edits as requested.
 
-**Result**: Pending evidence.
+**Result**: No standalone metric is published.
 
 ## Outcome
 
 Shipped and maintained WordPress + Elementor sites for multiple
 small business clients. Specific traffic, conversion, or retention
-impact not isolated to this contribution; left as pending evidence
-rather than rounded up.
+impact is not published as a standalone metric for this engagement.
 
 ## Evidence
 

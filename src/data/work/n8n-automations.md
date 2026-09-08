@@ -2,9 +2,7 @@
 title: n8n Automations
 slug: n8n-automations
 summary: Used n8n for internal automation workflows across projects — no
-  public example available yet. Generic case study with honest "pending
-  evidence" markers and a clear scope note about the absence of a
-  shareable public workflow.
+  public example available yet. Generic case study with a clear scope note about the absence of a shareable public workflow.
 classification: personal-project
 category: 'recurring'
 role: Builder (automation)
@@ -45,7 +43,7 @@ CRMs is slow and error-prone.
 form and write the parsed payload to a target system (database or
 spreadsheet) with basic error handling.
 
-**Result**: Pending evidence.
+**Result**: No standalone metric is published.
 
 ### 2. Email-to-task automation
 
@@ -56,7 +54,7 @@ tasks without manual triage.
 incoming mail by simple rules, and create tasks in the relevant
 tracker.
 
-**Result**: Pending evidence.
+**Result**: No standalone metric is published.
 
 ### 3. Scraper-to-Notion sync
 
@@ -67,7 +65,7 @@ without manual copy-paste.
 schedule, transform the data, and push it to a Notion database
 via the Notion API.
 
-**Result**: Pending evidence.
+**Result**: No standalone metric is published.
 
 ## Outcome
 

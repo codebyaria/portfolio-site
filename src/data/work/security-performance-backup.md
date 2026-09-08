@@ -3,8 +3,7 @@ title: Security, Performance, and Backup
 slug: security-performance-backup
 summary: Recurring security hardening, page-speed optimisation, and backup
   setup across multiple WordPress and Astro projects. Generic case
-  study with honest "pending evidence" markers where specific outcomes
-  are not isolated to this contribution.
+  study focused on delivery scope rather than unattributed outcome claims.
 classification: production
 category: 'recurring'
 role: Web Developer with infrastructure focus
@@ -53,8 +52,7 @@ protected admin paths, set strict file permissions, added security
 headers via Cloudflare or Nginx, enabled rate limiting on auth
 endpoints, and configured basic 2FA where appropriate.
 
-**Result**: Pending evidence — no isolated metric attributable to
-this contribution.
+**Result**: No standalone metric is published for this contribution.
 
 ### 2. Page-speed optimisation
 
@@ -66,7 +64,7 @@ remediations: image compression and lazy-loading, critical CSS,
 preload of above-the-fold assets, defer of non-critical JS, server
 or page caching, and CDN configuration.
 
-**Result**: Pending evidence.
+**Result**: No standalone metric is published.
 
 ### 3. Backup and restore
 
@@ -77,15 +75,14 @@ hosting provider snapshots.
 and equivalent scripts (Astro) to off-site storage; periodically
 verified restore from backup on a staging environment.
 
-**Result**: Pending evidence.
+**Result**: No standalone metric is published.
 
 ## Outcome
 
 Shipped and maintained security hardening, page-speed optimisation,
 and backup configurations across multiple web projects. Specific
 Lighthouse scores, time-to-recovery, or security incident counts not
-isolated to this contribution; left as pending evidence rather than
-rounded up.
+isolated to this contribution; not published as standalone metrics.
 
 ## Evidence
 
