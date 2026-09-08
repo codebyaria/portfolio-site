@@ -2,9 +2,9 @@
 /**
  * Engineering Approach section (PRD 5.4).
  *
- * Six-step loop presented as a horizontal flow on desktop, vertical
- * stack on mobile. Each step has a one-line label so the loop is
- * understandable from a glance, with a supporting explanation beneath.
+ * Editorial process map: a short principle card on the left and compact
+ * numbered decisions on the right. This avoids the old equal-width rail
+ * feeling too generic while keeping the six-step loop scannable.
  */
 
 const steps = [
@@ -18,15 +18,23 @@ const steps = [
 ---
 
 <section class="approach container" aria-labelledby="approach-title">
-  <header class="approach__header">
-    <p class="label approach__eyebrow">Engineering approach</p>
-    <h2 id="approach-title" class="approach__title">
-      I start from the problem, not the technology.
-    </h2>
-    <p class="approach__lead">
-      Every project I take on goes through the same loop. The order matters more than the tools.
-    </p>
-  </header>
+  <div class="approach__panel">
+    <header class="approach__header">
+      <p class="label approach__eyebrow">Engineering approach</p>
+      <h2 id="approach-title" class="approach__title">
+        Start with the business problem. Ship the smallest thing that can be trusted.
+      </h2>
+      <p class="approach__lead">
+        I keep the process deliberately boring: define the boundary, build the useful slice, verify
+        it, then improve with evidence.
+      </p>
+    </header>
+
+    <div class="approach__principle" aria-label="Operating principle">
+      <span class="approach__principle-kicker label">Operating principle</span>
+      <p>Clarity → Impact → Simplicity → Execution</p>
+    </div>
+  </div>
 
   <ol class="approach__flow" aria-label="Engineering workflow">
     {
@@ -35,36 +43,34 @@ const steps = [
           <span class="approach-step__num" aria-hidden="true">
             {String(idx + 1).padStart(2, '0')}
           </span>
-          <span class="approach-step__label">{step.label}</span>
-          <span class="approach-step__note label">{step.note}</span>
-          {idx < steps.length - 1 && (
-            <span class="approach-step__arrow" aria-hidden="true">
-              ↓
-            </span>
-          )}
+          <span class="approach-step__body">
+            <span class="approach-step__label">{step.label}</span>
+            <span class="approach-step__note label">{step.note}</span>
+          </span>
         </li>
       ))
     }
   </ol>
-
-  <p class="approach__closing">
-    I start with the business problem, define the architecture and data boundaries, build the
-    smallest maintainable solution, validate functionality and quality, then improve based on
-    evidence.
-  </p>
 </section>
 
 <style>
   .approach {
     padding-block: clamp(2rem, 6vw, 5rem);
     display: grid;
-    gap: var(--space-xl);
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
+    gap: var(--space-2xl);
     border-top: 1px solid var(--line);
+    align-items: start;
+  }
+  .approach__panel {
+    display: grid;
+    gap: var(--space-lg);
+    position: sticky;
+    top: var(--space-lg);
   }
   .approach__header {
     display: grid;
     gap: var(--space-sm);
-    max-width: 60ch;
   }
   .approach__eyebrow {
     margin: 0;
@@ -72,79 +78,91 @@ const steps = [
   }
   .approach__title {
     margin: 0;
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
   }
   .approach__lead {
     margin: 0;
     color: var(--soft-ink);
     font-size: 1.0625rem;
+    line-height: 1.55;
+    max-width: 52ch;
+  }
+  .approach__principle {
+    display: grid;
+    gap: var(--space-xs);
+    padding: var(--space-md);
+    border-left: 3px solid var(--accent);
+    background: color-mix(in srgb, var(--accent) 7%, transparent);
+  }
+  .approach__principle-kicker {
+    color: var(--accent);
+    margin: 0;
+  }
+  .approach__principle p {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
   }
   .approach__flow {
     margin: 0;
     padding: 0;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0;
-    align-items: start;
-  }
-  @media (max-width: 768px) {
-    .approach__flow {
-      grid-template-columns: 1fr;
-      gap: var(--space-md);
-    }
+    gap: var(--space-sm);
+    counter-reset: approach;
   }
   .approach-step {
     display: grid;
-    gap: var(--space-xs);
-    padding: var(--space-md);
-    border: 1px solid var(--line);
-    background: var(--surface);
-    position: relative;
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--line);
+  }
+  .approach-step:last-child {
+    border-bottom: 1px solid var(--line);
   }
   .approach-step__num {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     color: var(--accent);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
+    padding-top: 0.15rem;
+  }
+  .approach-step__body {
+    display: grid;
+    gap: 0.25rem;
   }
   .approach-step__label {
+    font-family: var(--font-sans);
     font-weight: 700;
-    font-size: 1.0625rem;
-    letter-spacing: -0.01em;
+    font-size: clamp(1.125rem, 2vw, 1.45rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
   }
   .approach-step__note {
     margin: 0;
     color: var(--soft-ink);
     font-size: 0.8125rem;
   }
-  .approach-step__arrow {
-    position: absolute;
-    right: var(--space-md);
-    bottom: -0.9rem;
-    background: var(--paper);
-    padding: 0 var(--space-xs);
-    color: var(--accent);
-    font-family: var(--font-mono);
-    z-index: 1;
-  }
-  @media (max-width: 768px) {
-    .approach-step__arrow {
-      right: 50%;
-      transform: translateX(50%);
-      bottom: -1.4rem;
+  @media (max-width: 860px) {
+    .approach {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+    .approach__panel {
+      position: static;
     }
   }
-  .approach__closing {
-    margin: 0;
-    max-width: 65ch;
-    color: var(--soft-ink);
-    font-size: 1rem;
-    line-height: 1.6;
-    border-left: 2px solid var(--accent);
-    padding-left: var(--space-md);
+  @media (max-width: 520px) {
+    .approach-step {
+      grid-template-columns: 3rem minmax(0, 1fr);
+      gap: var(--space-sm);
+    }
   }
 </style>
