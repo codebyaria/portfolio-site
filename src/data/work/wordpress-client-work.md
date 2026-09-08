@@ -1,11 +1,12 @@
 ---
-title: WordPress Client Work
+title: Virtual Office Jakarta
 slug: wordpress-client-work
-summary: WordPress + Elementor client work for small business clients across
-  multiple industries — generic case study with honest "pending evidence"
-  markers where specific outcomes are not isolated to this contribution.
+summary: WordPress + Elementor build and ongoing maintenance for an
+  Indonesian virtual-office services company. Single-client engagement
+  with explicit "pending evidence" markers where specific outcomes are
+  not isolated to this contribution.
 classification: client-work
-category: 'recurring'
+category: 'project'
 role: WordPress Developer
 stack:
   - WordPress
@@ -16,23 +17,24 @@ stack:
   - CSS
   - JavaScript
 status: self-reported
+deploymentUrl: https://virtualofficejakarta.co.id/
 ---
 
-# WordPress Client Work
+# Virtual Office Jakarta
 
 ## Context
 
-WordPress + Elementor client work delivered for small and medium
-businesses. Each engagement covers a self-contained site: a WordPress
-install with an Elementor-built front end, configured for the client
-industry and visual identity. Client identities are deliberately not
-disclosed — this case study covers the recurring shape of the work,
-not any specific client.
+[Virtual Office Jakarta](https://virtualofficejakarta.co.id/) is an
+Indonesian virtual-office services company — a single-client WordPress
+
+- Elementor engagement. The site uses WordPress with an Elementor-built
+  front end, configured for the virtual-office industry and the client
+  brand identity. The site is publicly live; specific visitor / conversion
+  impact attributable to this contribution is left as pending evidence.
 
 ## Dates and work arrangement
 
-Ongoing. Engagements are scoped per project and run as freelance work
-alongside other contracts.
+Ongoing freelance engagement, started in 2022 alongside other contracts.
 
 ## Role
 
@@ -84,8 +86,9 @@ rather than rounded up.
 
 ## Evidence
 
-- Self-reported by candidate.
-- No public client URLs disclosed in this entry.
+- Live product publicly visible at <https://virtualofficejakarta.co.id/>.
+- Self-reported by candidate; specific traffic / conversion numbers not
+  isolated to this contribution.
 
 ## Tech
 
@@ -95,14 +98,14 @@ WordPress · Elementor · PHP · MySQL · HTML · CSS · JavaScript
 
 What may be public:
 
-- Generic role label and stack publicly associated with WordPress
-  client work.
-- Generic descriptions of recurring work patterns.
-- Hosting providers commonly used in Indonesia and Malaysia.
+- Client name (publicly visible at <https://virtualofficejakarta.co.id/>).
+- Generic role label and stack publicly associated with WordPress client
+  work.
+- Description of site structure and feature patterns.
+- Hosting provider commonly used in Indonesia.
 
 What must stay private:
 
-- Client names and identifying details.
-- Specific revenue, traffic, or conversion numbers per client.
+- Specific revenue, traffic, or conversion numbers.
 - Internal client communications and unpublished screenshots.
 - Login credentials and host access details.
