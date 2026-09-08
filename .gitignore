@@ -10,3 +10,7 @@ coverage
 
 # Playwright screenshot output (binary, regenerated on demand)
 tests/screenshots/
+
+# Lighthouse CI output (binary HTML reports, regenerated on demand)
+lighthouse-report/
+.lighthouseci/

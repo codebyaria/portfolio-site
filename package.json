@@ -17,12 +17,14 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:screenshots": "node scripts/capture-mobile-screenshots.mjs"
+    "test:screenshots": "node scripts/capture-mobile-screenshots.mjs",
+    "audit:lighthouse": "lhci collect --config=lighthouserc.json && lhci upload --target=filesystem --output-path=./lighthouse-report"
   },
   "dependencies": {
     "astro": "^7.3.1"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@vitest/coverage-v8": "^5.0.0",
     "eslint": "^9.39.5",
     "eslint-plugin-astro": "^3.1.0",
