@@ -19,7 +19,7 @@ const groups: { id: Category; label: string; intro: string; items: typeof all }[
     id: 'project',
     label: 'Featured builds',
     intro:
-      'Modern web, CMS/API, automation, and dashboard work — kept to the pieces worth opening first.',
+      'Project-level examples across modern web, CMS/API, automation, dashboard, and earlier Laravel work.',
     items: projectItems,
   },
   {
@@ -35,14 +35,14 @@ const totalCount = groups.reduce((count, group) => count + group.items.length, 0
 
 <BaseLayout
   title="Work"
-  description="Selected work, classified by evidence status and grouped by category. No fabricated outcomes."
+  description="Selected work across web applications, content platforms, SEO, automation, and production roles."
 >
   <section class="container work-page" aria-labelledby="work-title">
     <p class="label work-page__eyebrow">Selected work · {totalCount} entries</p>
-    <h1 id="work-title">A shorter path through the work.</h1>
+    <h1 id="work-title">Web apps, automation, and production roles.</h1>
     <p class="work-page__intro">
-      Start with the strongest builds, then scan the workplace timeline. Recurring skills stay on
-      the homepage so this page does not turn into a long archive.
+      A curated view of project builds and workplace experience across Laravel, PHP, WordPress,
+      Next.js, SEO, APIs, and practical AI-assisted workflows.
     </p>
 
     {
