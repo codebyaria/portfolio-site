@@ -3,32 +3,65 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 
-type Category = 'workplace' | 'project' | 'recurring';
-
 const all = await getCollection('work');
 
-const workplaceItems = all
-  .filter((p) => p.data.category === 'workplace')
-  .sort((a, b) => a.data.title.localeCompare(b.data.title));
-const projectItems = all
-  .filter((p) => p.data.category === 'project' && p.data.classification !== 'client-work')
-  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+type Group = {
+  id: string;
+  label: string;
+  intro: string;
+  items: typeof all;
+};
+const bySlug = new Map(all.map((entry) => [entry.data.slug, entry]));
 
-const groups: { id: Category; label: string; intro: string; items: typeof all }[] = [
+const pick = (slugs: string[]) =>
+  slugs.map((slug) => bySlug.get(slug)).filter(Boolean) as typeof all;
+
+const featuredItems = pick([
+  'local-business-growth',
+  'ai-seo-content-pipeline',
+  'seo-intelligence-dashboard',
+]);
+const earlierItems = pick(['early-laravel-web-projects']);
+const workplaceItems = pick([
+  'merdeka-ai',
+  'object-expression-sdn-bhd',
+  'hasnur-centre',
+  'nongsa-sez',
+]);
+const recurringItems = pick([
+  'wordpress-client-work',
+  'analytics-integrations',
+  'security-performance-backup',
+  'n8n-automations',
+]);
+
+const groups: Group[] = [
   {
-    id: 'project',
-    label: 'Featured builds',
-    intro:
-      'Project-level examples across modern web, CMS/API, automation, dashboard, and earlier Laravel work.',
-    items: projectItems,
+    id: 'featured',
+    label: 'Featured projects',
+    intro: 'Project-level examples across modern web, CMS/API, automation, and dashboard work.',
+    items: featuredItems,
   },
   {
     id: 'workplace',
-    label: 'Workplaces',
-    intro: 'Full-time and contract roles, shown as a compact career timeline.',
+    label: 'Production roles',
+    intro: 'Full-time and contract roles shown separately from project builds.',
     items: workplaceItems,
   },
-];
+  {
+    id: 'earlier',
+    label: 'Earlier projects',
+    intro: 'Archived Laravel, PHP, and web/mobile practice projects kept as one compact entry.',
+    items: earlierItems,
+  },
+  {
+    id: 'recurring',
+    label: 'Recurring capabilities',
+    intro:
+      'Support work that often sits inside delivery: WordPress, analytics, performance, backups, and automation.',
+    items: recurringItems,
+  },
+].filter((group) => group.items.length > 0);
 
 const totalCount = groups.reduce((count, group) => count + group.items.length, 0);
 ---
@@ -47,7 +80,7 @@ const totalCount = groups.reduce((count, group) => count + group.items.length, 0
 
     {
       groups.map((group) => (
-        <div class="work-page__group">
+        <div class={`work-page__group work-page__group--${group.id}`}>
           <header class="work-page__group-header">
             <h2 class="work-page__group-title">{group.label}</h2>
             <p class="work-page__group-intro">{group.intro}</p>
@@ -96,6 +129,12 @@ const totalCount = groups.reduce((count, group) => count + group.items.length, 0
     display: grid;
     gap: 0.35rem;
   }
+  @media (min-width: 820px) {
+    .work-page__group-header {
+      grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.75fr);
+      align-items: end;
+    }
+  }
   .work-page__group-title {
     margin: 0;
     font-family: var(--font-sans);
@@ -106,7 +145,7 @@ const totalCount = groups.reduce((count, group) => count + group.items.length, 0
   }
   .work-page__group-intro {
     margin: 0;
-    max-width: 60ch;
+    max-width: 62ch;
     font-family: var(--font-longform);
     font-size: 1rem;
     line-height: 1.5;
@@ -117,5 +156,9 @@ const totalCount = groups.reduce((count, group) => count + group.items.length, 0
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
     gap: var(--space-md);
     margin-top: var(--space-sm);
+  }
+  .work-page__group--earlier .work-page__list,
+  .work-page__group--recurring .work-page__list {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   }
 </style>

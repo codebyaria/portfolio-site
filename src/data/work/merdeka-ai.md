@@ -22,7 +22,7 @@ evidence: >-
   LinkedIn profile PDF export provided by the candidate. Specific project
   names, cloud providers, client identities, operational metrics, and business
   outcomes are not isolated in the provided evidence, so they are deliberately
-  omitted or marked pending evidence.
+  omitted or kept as scope notes.
 ---
 
 # Merdeka-AI
@@ -61,8 +61,7 @@ applications that can evolve with changing requirements.
 Next.js, with attention to responsive UI/UX and maintainable application
 structure.
 
-**Result.** Pending evidence — no isolated performance, conversion, or
-business metric is currently attributable to this contribution in the
+**Result.** No standalone performance, conversion, or business metric is published for this contribution in the
 provided source.
 
 ### 2. API development and integration
@@ -73,7 +72,7 @@ access, workflow integration, and external service communication.
 **Action.** Build and manage RESTful and GraphQL API surfaces using
 Next.js API Routes and external integrations.
 
-**Result.** Pending evidence.
+**Result.** No standalone metric is published.
 
 ### 3. Deployment and operational workflow
 
@@ -83,7 +82,7 @@ maintenance workflows, not only feature implementation.
 **Action.** Deploy and manage applications on cloud platforms while
 maintaining CI/CD workflows, troubleshooting, and monitoring practices.
 
-**Result.** Pending evidence.
+**Result.** No standalone metric is published.
 
 ### 4. Practical AI-assisted development
 
@@ -94,7 +93,7 @@ outputs still need engineering review.
 improve productivity and explore solutions, while keeping final
 implementation decisions under human review.
 
-**Result.** Pending evidence.
+**Result.** No standalone metric is published.
 
 ## Outcome
 

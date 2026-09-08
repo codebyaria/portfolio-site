@@ -19,8 +19,7 @@ status: self-reported
 deploymentUrl: https://guruinovatif.id/
 evidence: >-
   Live product publicly visible at https://guruinovatif.id/. Specific
-  retention/conversion impact not isolated to this contribution; left
-  as pending evidence rather than rounded up.
+  retention/conversion impact not isolated to this contribution; not published as standalone metrics.
 ---
 
 # Hasnur Centre
@@ -62,8 +61,7 @@ channels could be compared honestly.
 flow so that each new user account could be tied back to its
 acquisition channel.
 
-**Result.** Pending evidence — no isolated metric is currently
-attributable to this layer, so no number is published here.
+**Result.** No standalone metric is published for this layer.
 
 ### 2. Events feature
 
@@ -75,7 +73,7 @@ application rather than as a separate tool.
 integrated with the existing application surface and the same content
 workflow used by the rest of the platform.
 
-**Result.** Pending evidence.
+**Result.** No standalone metric is published.
 
 ### 3. Affiliate system
 
@@ -85,7 +83,7 @@ teachers and be credited for the referral.
 **Action.** Implemented an affiliate layer so that existing users could
 refer new users and the system could track that relationship end-to-end.
 
-**Result.** Pending evidence.
+**Result.** No standalone metric is published.
 
 ### 4. Public landing page
 
@@ -98,15 +96,14 @@ with Tailwind and Bootstrap used in distinct parts of the page (Tailwind
 for the newer sections, Bootstrap where it was already present in the
 existing component library).
 
-**Result.** Pending evidence.
+**Result.** No standalone metric is published.
 
 ## Outcome
 
 Shipped and maintained the events + affiliate + source-tracking layer,
 plus the public landing page, for the Guruinovatif platform during my
-tenure at Hasnur Centre. Specific retention/conversion impact not
-isolated to this contribution; left as pending evidence rather than
-rounded up to company-level numbers.
+tenure at Hasnur Centre. Specific retention/conversion impact is not
+published as a standalone metric for this contribution.
 
 ## Technology
 
@@ -126,5 +123,5 @@ This page is intentionally bounded:
 
 If a future review uncovers a specific, sourceable metric attributable
 to this contribution, it will be added with an explicit evidence note.
-Until then, the "Pending evidence" markers above are deliberate and
+Until then, the "No standalone metric is published" markers above are deliberate and
 honest, not an oversight.

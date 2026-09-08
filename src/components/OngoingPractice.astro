@@ -1,57 +1,47 @@
 ---
-/**
- * Ongoing Practice section — recurring work patterns, no single deliverable.
- *
- * Three recurring entries: Analytics Integrations, Security / Performance /
- * Backup, and n8n Automations. These are capability patterns, not the
- * main workplace timeline.
- *
- * Hard-coded card data (matches ProductionExperience.astro card grid).
- */
 const entries = [
   {
     slug: 'analytics-integrations',
-    name: 'Analytics Integrations',
-    meta: 'Ongoing · GA4 · GSC · Meta Pixel · Clarity · Hotjar · GTM',
-    tag: 'Cross-project',
-    glyph: '◍',
+    name: 'Analytics setup',
+    meta: 'GA4 · GSC · GTM · pixels · Clarity',
   },
   {
     slug: 'security-performance-backup',
-    name: 'Security · Performance · Backup',
-    meta: 'Ongoing · Hardening · Optimisation · Restore',
-    tag: 'Cross-project',
-    glyph: '▥',
+    name: 'Performance and maintenance',
+    meta: 'Hardening · speed checks · backup/restore',
   },
   {
     slug: 'n8n-automations',
-    name: 'n8n Automations',
-    meta: 'Ongoing · Form-to-DB · Email-to-task · Scraper-to-Notion',
-    tag: 'Personal',
-    glyph: '⇄',
+    name: 'Workflow automation',
+    meta: 'n8n · webhooks · APIs · handoff flows',
+  },
+  {
+    slug: 'wordpress-client-work',
+    name: 'WordPress delivery',
+    meta: 'Elementor · PHP/MySQL · hosting handoff',
   },
 ];
 ---
 
 <section class="practice container" aria-labelledby="practice-title">
-  <p class="practice__eyebrow label">Ongoing Practice</p>
-  <h2 id="practice-title" class="practice__title">Recurring work patterns</h2>
-  <p class="practice__lead">
-    Practices I keep running across projects — no single deliverable, but real work that ships
-    repeatedly.
-  </p>
+  <div class="practice__header">
+    <div>
+      <p class="practice__eyebrow label">Recurring capabilities</p>
+      <h2 id="practice-title" class="practice__title">Useful work that repeats across projects.</h2>
+    </div>
+    <p class="practice__lead">
+      These are supporting delivery skills, kept compact so the main portfolio stays focused on
+      project builds and production roles.
+    </p>
+  </div>
 
-  <ul class="practice__cards" role="list">
+  <ul class="practice__list" role="list">
     {
       entries.map((entry) => (
-        <li class="practice__card">
+        <li class="practice__item">
           <a href={`/work/${entry.slug}/`}>
-            <span class="practice__card-glyph" aria-hidden="true">
-              {entry.glyph}
-            </span>
-            <span class="practice__card-name">{entry.name}</span>
-            <span class="practice__card-meta">{entry.meta}</span>
-            <span class="practice__card-tag">{entry.tag}</span>
+            <span class="practice__item-name">{entry.name}</span>
+            <span class="practice__item-meta">{entry.meta}</span>
           </a>
         </li>
       ))
@@ -61,99 +51,74 @@ const entries = [
 
 <style>
   .practice {
-    padding-block: clamp(2.5rem, 7vw, 6rem);
+    padding-block: clamp(2.25rem, 6vw, 5rem);
     display: grid;
     gap: var(--space-lg);
     border-top: 1px solid var(--line);
   }
+  .practice__header {
+    display: grid;
+    gap: var(--space-md);
+  }
+  @media (min-width: 820px) {
+    .practice__header {
+      grid-template-columns: minmax(0, 0.85fr) minmax(20rem, 0.75fr);
+      align-items: end;
+    }
+  }
   .practice__eyebrow {
     color: var(--accent);
-    margin: 0;
+    margin: 0 0 0.5rem;
   }
   .practice__title {
     margin: 0;
     font-family: var(--font-sans);
-    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
     line-height: 1.05;
     letter-spacing: -0.03em;
-    max-width: 28ch;
+    max-width: 22ch;
   }
   .practice__lead {
     margin: 0;
-    max-width: 56ch;
-    font-family: var(--font-longform);
-    font-size: 1.125rem;
-    line-height: 1.55;
     color: var(--soft-ink);
+    line-height: 1.55;
   }
-
-  .practice__cards {
+  .practice__list {
     list-style: none;
     padding: 0;
-    margin: var(--space-md) 0 0;
-    display: grid;
-    gap: var(--space-md);
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  }
-  .practice__card {
     margin: 0;
-  }
-  .practice__card a {
     display: grid;
-    grid-template-rows: auto auto auto auto;
-    gap: 0.45rem;
-    padding: var(--space-md) var(--space-lg);
-    border: 1px solid var(--line);
-    background: var(--paper);
+    border-top: 1px solid var(--line);
+  }
+  .practice__item {
+    border-bottom: 1px solid var(--line);
+  }
+  .practice__item a {
+    display: grid;
+    gap: 0.35rem;
+    padding-block: 1rem;
     color: var(--ink);
     text-decoration: none;
-    border-radius: 3px;
-    transition:
-      border-color 160ms ease,
-      transform 160ms ease;
-    min-height: 8.5rem;
   }
-  .practice__card a:hover,
-  .practice__card a:focus-visible {
-    border-color: var(--accent);
-    transform: translateY(-2px);
+  @media (min-width: 700px) {
+    .practice__item a {
+      grid-template-columns: minmax(12rem, 0.7fr) minmax(0, 1fr);
+      align-items: baseline;
+    }
   }
-  .practice__card-glyph {
-    font-size: 1.5rem;
-    line-height: 1;
+  .practice__item a:hover .practice__item-name,
+  .practice__item a:focus-visible .practice__item-name {
     color: var(--accent);
   }
-  .practice__card-name {
+  .practice__item-name {
     font-family: var(--font-sans);
     font-weight: 700;
-    font-size: 1.0625rem;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
-  .practice__card-meta {
+  .practice__item-meta {
     font-family: var(--font-mono);
-    font-size: 0.8125rem;
+    font-size: 0.8rem;
     color: var(--soft-ink);
-    line-height: 1.4;
-  }
-  .practice__card-tag {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--accent);
-    align-self: end;
-  }
-  .practice__brief {
-    margin: var(--space-md) 0 0;
-    max-width: 60ch;
-    font-family: var(--font-body);
-    font-size: 0.9375rem;
-    line-height: 1.55;
-    color: var(--soft-ink);
-  }
-  .practice__brief em {
-    font-style: italic;
-    color: var(--caution);
+    line-height: 1.45;
   }
 </style>

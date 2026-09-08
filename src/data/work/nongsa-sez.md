@@ -51,8 +51,7 @@ application work.
 **Action.** Contributed as a Mobile and Cloud Developer during the listed
 five-month period.
 
-**Result.** Pending evidence — no project-specific contribution, metric,
-or shipped outcome is listed in the provided source.
+**Result.** No standalone metric is published for this role.
 
 ## Outcome
 

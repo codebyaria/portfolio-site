@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TechnologyStrip from '../components/TechnologyStrip.astro';
 import CapabilityGrid from '../components/CapabilityGrid.astro';
+import SelectedProjects from '../components/SelectedProjects.astro';
 import EngineeringApproach from '../components/EngineeringApproach.astro';
 import Journey from '../components/Journey.astro';
 import OngoingPractice from '../components/OngoingPractice.astro';
@@ -67,6 +68,8 @@ const homeUrl = absoluteUrl('/', siteOrigin);
       </div>
     </dl>
   </section>
+
+  <SelectedProjects />
 
   <CapabilityGrid />
 

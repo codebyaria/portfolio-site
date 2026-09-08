@@ -46,8 +46,7 @@ Laravel web applications.
 Laravel) applications, with a focus on user-centric solutions and system
 efficiency.
 
-**Result**: Pending evidence — no isolated metric attributable to this
-contribution.
+**Result**: No standalone metric is published for this contribution.
 
 ### 2. Performance and reliability
 
@@ -57,7 +56,7 @@ end users.
 **Action**: Optimised performance, troubleshot bugs, and ensured
 seamless functionality across various platforms.
 
-**Result**: Pending evidence.
+**Result**: No standalone metric is published.
 
 ### 3. Maintenance across platforms
 
@@ -67,15 +66,14 @@ running cleanly across different deployment environments.
 **Action**: Maintained and updated existing applications as part of the
 long-running engineering team.
 
-**Result**: Pending evidence.
+**Result**: No standalone metric is published.
 
 ## Outcome
 
 Shipped and maintained PHP and Laravel web application features at a
 Cyberjaya-based Malaysian software company over a 15-month full-time
 engagement. Specific performance, reliability, or scope metrics not
-isolated to this contribution; left as pending evidence rather than
-rounded up.
+isolated to this contribution; not published as standalone metrics.
 
 ## Evidence
 
