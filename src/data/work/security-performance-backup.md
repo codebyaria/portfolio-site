@@ -6,6 +6,7 @@ summary: Recurring security hardening, page-speed optimisation, and backup
   study with honest "pending evidence" markers where specific outcomes
   are not isolated to this contribution.
 classification: production
+category: 'recurring'
 role: Web Developer with infrastructure focus
 stack:
   - WordPress

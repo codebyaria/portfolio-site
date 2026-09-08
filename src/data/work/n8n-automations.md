@@ -6,6 +6,7 @@ summary: Used n8n for internal automation workflows across projects — no
   evidence" markers and a clear scope note about the absence of a
   shareable public workflow.
 classification: personal-project
+category: 'recurring'
 role: Builder (automation)
 stack:
   - n8n

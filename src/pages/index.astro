@@ -3,7 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import TechnologyStrip from '../components/TechnologyStrip.astro';
 import CapabilityGrid from '../components/CapabilityGrid.astro';
 import EngineeringApproach from '../components/EngineeringApproach.astro';
-import ProductionExperience from '../components/ProductionExperience.astro';
+import Journey from '../components/Journey.astro';
+import OngoingPractice from '../components/OngoingPractice.astro';
 import { absoluteUrl } from '../lib/site.js';
 
 const siteOrigin = import.meta.env.SITE_ORIGIN ?? 'https://example.com';
@@ -71,7 +72,9 @@ const homeUrl = absoluteUrl('/', siteOrigin);
 
   <EngineeringApproach />
 
-  <ProductionExperience />
+  <Journey />
+
+  <OngoingPractice />
 </BaseLayout>
 
 <style>

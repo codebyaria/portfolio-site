@@ -3,6 +3,7 @@ title: Object Expression Sdn Bhd
 slug: object-expression-sdn-bhd
 summary: Fullstack Developer role at Object Expression Sdn Bhd.
 classification: production
+category: 'workplace'
 role: Fullstack Developer
 stack:
   - PHP

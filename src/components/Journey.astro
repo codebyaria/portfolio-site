@@ -1,0 +1,235 @@
+---
+/**
+ * Journey section — visual timeline of full-time / contract roles.
+ *
+ * Hard-coded entries (GuruInovatif, Object Expression). Each role becomes
+ * a node on a horizontal timeline on wide viewports; on narrow viewports
+ * the timeline stacks vertically.
+ *
+ * Two entries. Source: ../data/work/{slug}.md (full case study there).
+ * No fabrication: only claims already on the public work entries.
+ */
+const entries = [
+  {
+    slug: 'production-saas-platform',
+    name: 'GuruInovatif',
+    role: 'Fullstack Developer',
+    dates: 'Aug 2022 – Jan 2024',
+    location: 'Indonesia',
+    summary:
+      'Source-tracking, events feature, affiliate programme, and the public landing page for an Indonesian teacher-development platform.',
+    stack: ['Laravel', 'Tailwind', 'Bootstrap', 'MySQL'],
+    glyph: '◉',
+  },
+  {
+    slug: 'object-expression-sdn-bhd',
+    name: 'Object Expression Sdn. Bhd.',
+    role: 'Fullstack Developer',
+    dates: 'Jan 2024 – Mar 2025',
+    location: 'Cyberjaya, Malaysia',
+    summary:
+      'Web application features, performance optimisation, and maintenance on a PHP (native + Laravel) stack for a Malaysian software company.',
+    stack: ['PHP (native)', 'Laravel', 'MySQL'],
+    glyph: '◈',
+  },
+];
+---
+
+<section class="journey container" aria-labelledby="journey-title">
+  <p class="journey__eyebrow label">Journey</p>
+  <h2 id="journey-title" class="journey__title">Where I worked full-time</h2>
+  <p class="journey__lead">
+    Real professional roles — full-time and contract — shipped to production systems, separate from
+    portfolio demos.
+  </p>
+
+  <ol class="journey__timeline" role="list">
+    {
+      entries.map((entry, index) => (
+        <li class="journey__node" data-position={index % 2 === 0 ? 'top' : 'bottom'}>
+          <div class="journey__node-dot" aria-hidden="true">
+            {entry.glyph}
+          </div>
+          <div class="journey__node-card">
+            <p class="journey__node-dates label">{entry.dates}</p>
+            <h3 class="journey__node-name">
+              <a href={`/work/${entry.slug}/`}>{entry.name}</a>
+            </h3>
+            <p class="journey__node-role">
+              <span class="journey__node-role-title">{entry.role}</span>
+              <span class="journey__node-role-sep" aria-hidden="true">
+                ·
+              </span>
+              <span class="journey__node-location">{entry.location}</span>
+            </p>
+            <p class="journey__node-summary">{entry.summary}</p>
+            <ul class="journey__node-stack" role="list">
+              {entry.stack.map((tech) => (
+                <li>{tech}</li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</section>
+
+<style>
+  .journey {
+    padding-block: clamp(2.5rem, 7vw, 6rem);
+    display: grid;
+    gap: var(--space-lg);
+    border-top: 1px solid var(--line);
+  }
+  .journey__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .journey__title {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    max-width: 28ch;
+  }
+  .journey__lead {
+    margin: 0;
+    max-width: 56ch;
+    font-family: var(--font-longform);
+    font-size: 1.125rem;
+    line-height: 1.55;
+    color: var(--soft-ink);
+  }
+
+  /* Timeline layout — vertical on small, alternating above/below track on wide */
+  .journey__timeline {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 0;
+    position: relative;
+    display: grid;
+    gap: var(--space-lg);
+  }
+  /* Vertical connector line on small screens */
+  .journey__timeline::before {
+    content: '';
+    position: absolute;
+    left: 1.125rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--line);
+  }
+
+  .journey__node {
+    margin: 0;
+    padding-left: 3rem;
+    position: relative;
+  }
+  .journey__node-dot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--paper);
+    display: grid;
+    place-items: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+    z-index: 1;
+  }
+  .journey__node-card {
+    display: grid;
+    gap: 0.4rem;
+    padding: var(--space-md) 0 0;
+  }
+  .journey__node-dates {
+    color: var(--accent);
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .journey__node-name {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 1.375rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .journey__node-name a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .journey__node-name a:hover,
+  .journey__node-name a:focus-visible {
+    color: var(--accent);
+  }
+  .journey__node-role {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--soft-ink);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .journey__node-role-sep {
+    color: var(--accent);
+  }
+  .journey__node-summary {
+    margin: 0.25rem 0 0;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 60ch;
+  }
+  .journey__node-stack {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .journey__node-stack li {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--soft-ink);
+    border: 1px solid var(--line);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  /* Horizontal layout on wide screens with alternating dots above/below */
+  @media (min-width: 900px) {
+    .journey__timeline {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-2xl);
+    }
+    .journey__timeline::before {
+      left: 0;
+      right: 0;
+      top: 1.125rem;
+      bottom: auto;
+      width: auto;
+      height: 2px;
+      background: var(--line);
+    }
+    .journey__node {
+      padding-left: 0;
+      padding-top: 4rem;
+    }
+    .journey__node-dot {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+</style>

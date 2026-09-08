@@ -10,11 +10,22 @@ export type ProjectClassification =
 
 export type ProjectStatus = 'in-development' | 'self-reported' | 'published';
 
+/**
+ * Display category for the homepage grouping.
+ *
+ * - `workplace` — full-time / contract roles (e.g. GuruInovatif, Object Expression).
+ * - `project`   — finished or in-development projects with a public deliverable.
+ * - `recurring` — recurring patterns of work without a single deliverable
+ *                 (e.g. analytics, security, WordPress client engagements).
+ */
+export type ProjectCategory = 'workplace' | 'project' | 'recurring';
+
 export interface ProjectFrontmatter {
   title: string;
   slug: string;
   summary: string;
   classification: ProjectClassification;
+  category: ProjectCategory;
   role: string;
   stack: string[];
   status: ProjectStatus;
@@ -35,6 +46,8 @@ const STATUSES: ReadonlySet<ProjectStatus> = new Set([
   'self-reported',
   'published',
 ]);
+
+const CATEGORIES: ReadonlySet<ProjectCategory> = new Set(['workplace', 'project', 'recurring']);
 
 export class ProjectValidationError extends Error {
   constructor(
@@ -69,6 +82,19 @@ function requireStack(value: unknown): string[] {
     throw new ProjectValidationError('stack must be a non-empty array of strings', 'stack');
   }
   return value.map((entry, index) => requireString(entry, `stack[${index}]`));
+}
+
+function requireCategory(value: unknown): ProjectCategory {
+  if (typeof value !== 'string') {
+    throw new ProjectValidationError('category must be a string', 'category');
+  }
+  if (!CATEGORIES.has(value as ProjectCategory)) {
+    throw new ProjectValidationError(
+      `category must be one of: ${Array.from(CATEGORIES).join(', ')}`,
+      'category',
+    );
+  }
+  return value as ProjectCategory;
 }
 
 function requireEnumeration<T extends string>(
@@ -106,6 +132,7 @@ export function validateProject(input: ProjectFrontmatter): ProjectFrontmatter {
   const role = requireString(candidate.role, 'role');
   const stack = requireStack(candidate.stack);
   const status = requireEnumeration(candidate.status, STATUSES, 'status');
+  const category = requireCategory(candidate.category);
   const deploymentUrl = optionalString(candidate.deploymentUrl, 'deploymentUrl');
   const repositoryUrl = optionalString(candidate.repositoryUrl, 'repositoryUrl');
 
@@ -121,6 +148,7 @@ export function validateProject(input: ProjectFrontmatter): ProjectFrontmatter {
     slug,
     summary,
     classification,
+    category,
     role,
     stack,
     status,
