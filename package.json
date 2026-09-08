@@ -16,7 +16,8 @@
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:screenshots": "node scripts/capture-mobile-screenshots.mjs"
   },
   "dependencies": {
     "astro": "^7.3.1"
@@ -26,6 +27,7 @@
     "eslint": "^9.39.5",
     "eslint-plugin-astro": "^3.1.0",
     "jsdom": "^30.0.1",
+    "playwright": "^1.63.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "~6.6.3",
@@ -39,5 +41,6 @@
     "overrides": {
       "typescript": ">=6.0.0 <7.0.0"
     }
-  }
+  },
+  "eslintConfig": {}
 }
