@@ -8,3 +8,6 @@ coverage
 docs
 DESIGN.md
 docs/tdd-log.md
+
+# Mobile screenshots (binary PNG output)
+tests/screenshots/

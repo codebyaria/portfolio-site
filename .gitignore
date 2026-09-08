@@ -7,3 +7,6 @@ coverage
 .pnpm-store
 *.log
 .DS_Store
+
+# Playwright screenshot output (binary, regenerated on demand)
+tests/screenshots/
