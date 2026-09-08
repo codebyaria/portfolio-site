@@ -19,10 +19,8 @@ stack:
   - ChatGPT
 status: self-reported
 evidence: >-
-  LinkedIn profile PDF export provided by the candidate. Specific project
-  names, cloud providers, client identities, operational metrics, and business
-  outcomes are not isolated in the provided evidence, so they are deliberately
-  omitted or kept as scope notes.
+  LinkedIn profile PDF export and resume PDF provided by the candidate. The
+  resume lists selected projects including Takdol, Goband, Ramoo, and ABC Auto Care.
 ---
 
 # Merdeka-AI
@@ -33,10 +31,9 @@ Merdeka-AI is listed on the provided LinkedIn profile export as the
 candidate's current workplace from January 2025 to present in Kota
 Tangerang Selatan, Banten, Indonesia.
 
-This entry is intentionally generic: the source evidence confirms the
-role, dates, location, broad responsibility areas, and tools. It does not
-provide sourceable project names, client names, performance metrics, or
-implementation details that can be safely published.
+This entry covers the workplace role. Project-specific pages now document selected
+resume-listed work separately, so the role page can stay focused on responsibilities,
+stack, and delivery scope.
 
 ## Dates and work arrangement
 
@@ -51,6 +48,14 @@ productivity, CI/CD workflows, troubleshooting, monitoring, and
 cross-team collaboration.
 
 ## Contributions
+
+### Selected project surfaces
+
+The provided resume lists selected projects from the current work period including
+Takdol Marketplace Ecosystem, Goband Logistics Command Center, Ramoo Multi-Store POS
+Platform, and ABC Auto Care Booking Experience. Those are published as separate
+project entries so visitors can scan project-level work without mixing it into the
+employment timeline.
 
 ### 1. Next.js web application development
 
