@@ -32,23 +32,36 @@ entries.
 
 ## Features
 
-- `/` homepage with selected work cards and capability descriptions.
+- `/` homepage with hero, technology strip, capability grid, engineering
+  approach loop, selected work, and Production Experience section.
 - `/work/` index + `/work/[slug]/` detail pages (Content Collection).
+  7 work entries: 3 portfolio demos + 4 Production Experience entries
+  (GuruInovatif, Object Expression, WordPress, Analytics, Security,
+  n8n) all with honesty labels and explicit "Pending evidence" markers
+  where metrics are not isolated.
 - `/about/`, `/notes/`, `/contact/`.
 - Sitemap, robots.txt, canonical URLs, Open Graph, Twitter card.
 - `noindex` on draft and contact surfaces where appropriate.
 - Responsive, accessible navigation.
 
+## Brand
+
+Editorial Technical visual direction (charcoal ink + sage paper + burnt
+orange `#C65D2E` accent + Helvetica Neue display + Iowan Old Style
+serif long-form + SFMono labels). See `DESIGN.md` for the full system.
+
 ## Local Development
 
 ```bash
 pnpm install
-pnpm dev          # http://localhost:4321
-pnpm test         # Vitest
-pnpm typecheck    # tsc --noEmit (strict)
-pnpm lint         # ESLint --max-warnings=0
-pnpm format:check # Prettier
-pnpm build        # Astro static build
+pnpm dev              # http://localhost:4321
+pnpm test             # Vitest
+pnpm typecheck        # tsc --noEmit (strict)
+pnpm lint             # ESLint --max-warnings=0
+pnpm format:check     # Prettier
+pnpm build            # Astro static build
+pnpm test:screenshots # mobile-width (390x844) Playwright captures -> tests/screenshots/mobile/
+pnpm audit:lighthouse # Lighthouse CI desktop audit -> lighthouse-report/
 ```
 
 ## Tech Stack
@@ -64,10 +77,26 @@ GitHub Actions runs `lint`, `format:check`, `typecheck`, `test`, and
 `build` on every push to `main` and on every pull request. See
 `.github/workflows/ci.yml`.
 
+Note: as of 2026-09 the `codebyaria` GitHub account is **billing-locked**,
+so `gh run` jobs may return failure annotations until billing is
+resolved at <https://github.com/settings/billing>. Local quality gates
+must still pass before push.
+
 ## Deployment
 
 Vercel (manual import via vercel.com UI as `codebyaria` account). Static
 build — no Node adapter needed.
+
+## Production Experience
+
+The `/work/production-saas-platform/` (GuruInovatif), `/work/object-expression-sdn-bhd/`,
+`/work/wordpress-client-work/`, `/work/analytics-integrations/`,
+`/work/security-performance-backup/`, and `/work/n8n-automations/`
+entries are classified as **production** or **client-work** /
+**personal-project**. Per PRD 10.2, no confidential code, credentials,
+customer data, proprietary architecture, or internal business
+information appears in any of them. Each contribution is marked
+_Pending evidence_ where a metric is not personally attributable.
 
 ## Honesty
 
