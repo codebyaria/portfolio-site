@@ -11,9 +11,13 @@ const { project, headingLevel = 3 } = Astro.props;
 const Heading = `h${headingLevel}` as 'h2' | 'h3';
 ---
 
-<article class="project-card">
+<article class="project-card" data-category={project.data.category}>
   <div class="project-card__top">
-    <Heading class="project-card__title">{project.data.title}</Heading>
+    <Heading class="project-card__title">
+      {project.data.title}
+      <span class="project-card__category label" aria-label="Category">{project.data.category}</span
+      >
+    </Heading>
     <EvidenceMeta classification={project.data.classification} status={project.data.status} />
   </div>
   <p class="project-card__summary">{project.data.summary}</p>
@@ -75,5 +79,17 @@ const Heading = `h${headingLevel}` as 'h2' | 'h3';
   .project-card__link:hover,
   .project-card__link:focus-visible {
     border-bottom-color: var(--accent);
+  }
+  .project-card__category {
+    display: inline-block;
+    margin-left: 0.6rem;
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    vertical-align: middle;
+    border-radius: 2px;
   }
 </style>

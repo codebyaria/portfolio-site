@@ -6,6 +6,7 @@ summary: Recurring analytics integration work across multiple projects —
   Microsoft Clarity, and Hotjar. Generic case study with honest
   "pending evidence" markers where specific outcomes are not isolated.
 classification: production
+category: 'recurring'
 role: Web Developer with analytics focus
 stack:
   - GA4

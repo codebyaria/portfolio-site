@@ -7,6 +7,7 @@ summary: >-
   landing page. Generic case study with honest "pending evidence" markers
   where metrics are not isolated to this contribution.
 classification: production
+category: 'workplace'
 role: Fullstack Developer
 stack:
   - Laravel

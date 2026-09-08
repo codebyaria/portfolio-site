@@ -3,6 +3,7 @@ title: AI SEO Content Pipeline
 slug: ai-seo-content-pipeline
 summary: Bounded Node.js service that drafts SEO metadata from Strapi article inputs with validation, retry, and human-review guardrails.
 classification: concept-demo
+category: 'project'
 role: Full-Stack Web Developer (demo)
 stack:
   - Node.js

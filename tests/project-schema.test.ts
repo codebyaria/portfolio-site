@@ -10,6 +10,7 @@ const base: ProjectFrontmatter = {
   slug: 'local-business-growth',
   summary: 'Full-stack agency demo for a roofing concept business.',
   classification: 'concept-demo',
+  category: 'project',
   role: 'Full-Stack Web Developer',
   stack: ['Astro', 'Strapi', 'TypeScript'],
   status: 'in-development',
@@ -46,5 +47,17 @@ describe('validateProject', () => {
         deploymentUrl: 'https://example.com',
       }),
     ).not.toThrow();
+  });
+
+  it('rejects an unknown category', () => {
+    expect(() => validateProject({ ...base, category: 'fake' as never })).toThrow(
+      ProjectValidationError,
+    );
+  });
+
+  it('accepts each valid category', () => {
+    expect(validateProject({ ...base, category: 'workplace' }).category).toBe('workplace');
+    expect(validateProject({ ...base, category: 'project' }).category).toBe('project');
+    expect(validateProject({ ...base, category: 'recurring' }).category).toBe('recurring');
   });
 });

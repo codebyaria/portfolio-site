@@ -5,6 +5,7 @@ summary: WordPress + Elementor client work for small business clients across
   multiple industries — generic case study with honest "pending evidence"
   markers where specific outcomes are not isolated to this contribution.
 classification: client-work
+category: 'recurring'
 role: WordPress Developer
 stack:
   - WordPress

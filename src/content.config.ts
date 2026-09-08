@@ -14,6 +14,7 @@ const projectCollection = defineCollection({
       'personal-project',
       'production',
     ]),
+    category: z.enum(['workplace', 'project', 'recurring']),
     role: z.string().min(1),
     stack: z.array(z.string().min(1)).nonempty(),
     status: z.enum(['in-development', 'self-reported', 'published']),
