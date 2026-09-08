@@ -3,10 +3,8 @@ title: Merdeka-AI
 slug: merdeka-ai
 summary: >-
   Fullstack Developer role at Merdeka-AI, Jan 2025 – Present. Work covers
-  Next.js web applications, API development, cloud deployment, CI/CD, and
-  practical AI-assisted development. Generic workplace entry based on the
-  provided LinkedIn profile export; no private client details or metrics are
-  published.
+  Next.js web applications, REST/GraphQL APIs, cloud deployment, CI/CD,
+  and practical AI-assisted development.
 classification: production
 category: 'workplace'
 role: Fullstack Developer

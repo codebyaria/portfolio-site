@@ -2,11 +2,9 @@
 title: Hasnur Centre
 slug: hasnur-centre
 summary: >-
-  Fullstack Web Developer at Hasnur Centre (Yogyakarta), Aug 2022 – Jan
-  2024. Contributed to internal product builds including Guruinovatif.id
-  (an Indonesian teacher-development platform). Generic case study with
-  honest "pending evidence" markers where metrics are not isolated to
-  this contribution.
+  Web Developer at Hasnur Centre (Yogyakarta), Aug 2022 – Jan 2024.
+  Contributed to Laravel product work including Guruinovatif.id, an
+  Indonesian teacher-development platform.
 classification: production
 category: 'workplace'
 role: Web Developer

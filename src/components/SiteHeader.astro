@@ -10,9 +10,11 @@ const links = [
 
 <header class="site-header">
   <div class="container site-header__row">
-    <a class="site-header__mark" href="/">
-      <span class="site-header__avatar" aria-hidden="true">AZ</span>
-      <span class="site-header__name">Aria Nurhadi Zain</span>
+    <a class="site-header__mark" href="/" aria-label="Aria Nurhadi Zain home">
+      <picture class="site-header__logo">
+        <source srcset="/images/aria-logo.webp" type="image/webp" />
+        <img src="/images/aria-logo.png" alt="" width="512" height="251" decoding="async" />
+      </picture>
     </a>
     <nav class="site-header__nav" aria-label="Primary">
       <ul>
@@ -47,23 +49,17 @@ const links = [
   .site-header__mark {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
     text-decoration: none;
-    font-weight: 800;
   }
-  .site-header__avatar {
-    display: grid;
-    width: 36px;
-    height: 36px;
-    place-items: center;
-    background: var(--ink);
-    color: var(--inverse);
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.05em;
+  .site-header__logo {
+    display: block;
+    width: clamp(7rem, 11vw, 9rem);
+    line-height: 0;
   }
-  .site-header__name {
-    font-family: var(--font-sans);
+  .site-header__logo img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
   .site-header__nav ul {
     list-style: none;

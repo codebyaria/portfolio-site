@@ -7,28 +7,30 @@ type Category = 'workplace' | 'project' | 'recurring';
 
 const all = await getCollection('work');
 
+const workplaceItems = all
+  .filter((p) => p.data.category === 'workplace')
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+const projectItems = all
+  .filter((p) => p.data.category === 'project' && p.data.classification !== 'client-work')
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
 const groups: { id: Category; label: string; intro: string; items: typeof all }[] = [
   {
-    id: 'workplace',
-    label: 'Journey',
-    intro: 'Full-time and contract roles — real production systems shipped with accountability.',
-    items: all.filter((p) => p.data.category === 'workplace'),
-  },
-  {
     id: 'project',
-    label: 'Selected Work',
-    intro: 'Project-level deliverables — portfolio demos, concept work, in-development pieces.',
-    items: all.filter((p) => p.data.category === 'project'),
+    label: 'Featured builds',
+    intro:
+      'Modern web, CMS/API, automation, and dashboard work — kept to the pieces worth opening first.',
+    items: projectItems,
   },
   {
-    id: 'recurring',
-    label: 'Ongoing Practice',
-    intro: 'Recurring patterns of work across multiple engagements — no single deliverable.',
-    items: all.filter((p) => p.data.category === 'recurring'),
+    id: 'workplace',
+    label: 'Workplaces',
+    intro: 'Full-time and contract roles, shown as a compact career timeline.',
+    items: workplaceItems,
   },
 ];
 
-const totalCount = all.length;
+const totalCount = groups.reduce((count, group) => count + group.items.length, 0);
 ---
 
 <BaseLayout
@@ -37,11 +39,10 @@ const totalCount = all.length;
 >
   <section class="container work-page" aria-labelledby="work-title">
     <p class="label work-page__eyebrow">Selected work · {totalCount} entries</p>
-    <h1 id="work-title">What I have been building</h1>
+    <h1 id="work-title">A shorter path through the work.</h1>
     <p class="work-page__intro">
-      Each entry is classified. Grouped below by category — workplace roles, project deliverables,
-      and recurring practice patterns stay distinct. No metric, client outcome, or screenshot
-      appears here until evidence review confirms it.
+      Start with the strongest builds, then scan the workplace timeline. Recurring skills stay on
+      the homepage so this page does not turn into a long archive.
     </p>
 
     {
@@ -88,7 +89,7 @@ const totalCount = all.length;
   .work-page__group {
     display: grid;
     gap: var(--space-md);
-    padding-top: var(--space-xl);
+    padding-top: var(--space-lg);
     border-top: 1px solid var(--line);
   }
   .work-page__group-header {
@@ -112,7 +113,9 @@ const totalCount = all.length;
     color: var(--soft-ink);
   }
   .work-page__list {
-    border-top: 1px solid var(--line);
-    margin-top: var(--space-md);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-sm);
   }
 </style>

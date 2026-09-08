@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import EvidenceMeta from './EvidenceMeta.astro';
 
 interface Props {
   project: CollectionEntry<'work'>;
@@ -9,87 +8,73 @@ interface Props {
 
 const { project, headingLevel = 3 } = Astro.props;
 const Heading = `h${headingLevel}` as 'h2' | 'h3';
+
+const categoryLabels = {
+  workplace: 'Workplace',
+  project: 'Build',
+  recurring: 'Practice',
+} as const;
 ---
 
 <article class="project-card" data-category={project.data.category}>
-  <div class="project-card__top">
-    <Heading class="project-card__title">
-      {project.data.title}
-      <span class="project-card__category label" aria-label="Category">{project.data.category}</span
-      >
-    </Heading>
-    <EvidenceMeta classification={project.data.classification} status={project.data.status} />
-  </div>
+  <p class="project-card__kicker label">{categoryLabels[project.data.category]}</p>
+  <Heading class="project-card__title">
+    <a href={`/work/${project.data.slug}/`}>{project.data.title}</a>
+  </Heading>
   <p class="project-card__summary">{project.data.summary}</p>
-  <p class="project-card__role">
-    <span class="label">Role</span>
+  <p class="project-card__meta">
     <span>{project.data.role}</span>
+    <span aria-hidden="true">·</span>
+    <span>{project.data.stack.slice(0, 3).join(' · ')}</span>
   </p>
-  <p class="project-card__stack">
-    <span class="label">Stack</span>
-    <span>{project.data.stack.join(' · ')}</span>
-  </p>
-  <a class="project-card__link" href={`/work/${project.data.slug}/`}>Open case study →</a>
 </article>
 
 <style>
   .project-card {
     display: grid;
-    gap: 0.75rem;
-    padding-block: var(--space-xl);
-    border-bottom: 1px solid var(--line);
+    gap: 0.65rem;
+    padding: var(--space-md) var(--space-lg);
+    border: 1px solid var(--line);
+    background: var(--paper);
+    min-height: 13rem;
   }
-  .project-card:last-child {
-    border-bottom: 0;
-  }
-  .project-card__top {
-    display: grid;
-    gap: 1rem;
+  .project-card__kicker {
+    margin: 0;
+    color: var(--accent);
   }
   .project-card__title {
     margin: 0;
     font-family: var(--font-sans);
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-size: clamp(1.35rem, 2.4vw, 1.9rem);
     line-height: 1.05;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.035em;
+  }
+  .project-card__title a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .project-card__title a:hover,
+  .project-card__title a:focus-visible {
+    color: var(--accent);
   }
   .project-card__summary {
     margin: 0;
-    max-width: 60ch;
     color: var(--soft-ink);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
-  .project-card__role,
-  .project-card__stack {
-    display: grid;
-    gap: 0.15rem;
-    margin: 0;
-  }
-  .project-card__role .label,
-  .project-card__stack .label {
+  .project-card__meta {
+    align-self: end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: var(--space-xs) 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.4;
     color: var(--soft-ink);
-  }
-  .project-card__link {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    font-weight: 700;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-  }
-  .project-card__link:hover,
-  .project-card__link:focus-visible {
-    border-bottom-color: var(--accent);
-  }
-  .project-card__category {
-    display: inline-block;
-    margin-left: 0.6rem;
-    padding: 0.1rem 0.5rem;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    font-size: 0.6875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    vertical-align: middle;
-    border-radius: 2px;
   }
 </style>
