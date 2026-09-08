@@ -5,7 +5,7 @@ description: Evidence-first editorial system for Aria Nurhadi Zain’s DigiAgenc
 colors:
   primary: "#101416"
   secondary: "#4D5658"
-  tertiary: "#006F61"
+  tertiary: "#C65D2E"
   neutral: "#E9ECE8"
   surface: "#F7F8F4"
   border: "#969F9D"
@@ -133,7 +133,7 @@ The system should feel precise, visually aware, fast, honest, and production-min
 
 - **Primary — Technical Ink (`#101416`):** dominant text, high-emphasis controls, strong rules.
 - **Secondary — Graphite (`#4D5658`):** supporting copy and secondary metadata.
-- **Tertiary — Signal Teal (`#006F61`):** the single interaction and emphasis accent; deliberately avoids DigiAgency’s purple identity.
+- **Tertiary — Burnt Orange (`#C65D2E`):** the single interaction and emphasis accent — burnt orange, warm, distinctive, creative; deliberately distinct from corporate teal/blue.
 - **Neutral — Field Gray (`#E9ECE8`):** main page field.
 - **Surface — Evidence Paper (`#F7F8F4`):** restrained section surfaces and long-form reading areas.
 - **Border — Measured Line (`#969F9D`):** structural rules; never a decorative accent rail.
@@ -228,7 +228,7 @@ States full-time remote intent and exposes email, LinkedIn, and GitHub. It is no
 
 - Lead with evidence and honest project classification.
 - Use typography and grid interruption to create character.
-- Keep the primary accent scarce and meaningful.
+- Keep the burnt orange accent scarce and meaningful.
 - Make content understandable to both business and technical reviewers.
 - Use real screenshots, diagrams, tests, and verified results when available.
 - Preserve a clean static Astro path and minimize client-side JavaScript.
