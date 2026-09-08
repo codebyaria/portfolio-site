@@ -17,10 +17,15 @@ const pick = (slugs: string[]) =>
   slugs.map((slug) => bySlug.get(slug)).filter(Boolean) as typeof all;
 
 const featuredItems = pick([
+  'takdol-marketplace-ecosystem',
+  'goband-logistics-command-center',
+  'ramoo-multi-store-pos-platform',
+  'abc-auto-care-booking-experience',
   'local-business-growth',
   'ai-seo-content-pipeline',
   'seo-intelligence-dashboard',
 ]);
+const analyticsItems = pick(['cctv-trolley-analytics']);
 const earlierItems = pick(['early-laravel-web-projects']);
 const workplaceItems = pick([
   'merdeka-ai',
@@ -39,8 +44,16 @@ const groups: Group[] = [
   {
     id: 'featured',
     label: 'Featured projects',
-    intro: 'Project-level examples across modern web, CMS/API, automation, and dashboard work.',
+    intro:
+      'Project-level examples across marketplace, logistics, POS, booking, CMS/API, automation, and dashboard work.',
     items: featuredItems,
+  },
+  {
+    id: 'analytics',
+    label: 'Analytics projects',
+    intro:
+      'Operations and monitoring work that can grow into fuller case studies as more details are confirmed.',
+    items: analyticsItems,
   },
   {
     id: 'workplace',
