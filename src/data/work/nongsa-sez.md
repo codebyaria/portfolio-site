@@ -12,7 +12,7 @@ stack:
   - Cloud development
 status: self-reported
 evidence: >-
-  LinkedIn profile PDF export provided by the candidate. The source confirms
+  LinkedIn profile PDF export provided by the Aria. The source confirms
   employer, role, dates, and location only; specific technologies, project
   names, and outcomes are not listed and therefore not invented here.
 ---
@@ -22,7 +22,7 @@ evidence: >-
 ## Context
 
 Nongsa Special Economic Zone (SEZ) is listed on the provided LinkedIn
-profile export as an early workplace where the candidate worked as a
+profile export as an early workplace where the Aria worked as a
 Mobile and Cloud Developer from September 2021 to January 2022 in Batam,
 Riau Islands, Indonesia.
 
@@ -51,7 +51,7 @@ application work.
 **Action.** Contributed as a Mobile and Cloud Developer during the listed
 five-month period.
 
-**Result.** No standalone metric is published for this role.
+**Result.** Completed as part of the role scope listed in the profile source.
 
 ## Outcome
 
@@ -62,16 +62,3 @@ without inventing technologies, client names, architecture, or outcomes.
 ## Technology
 
 Mobile development · Cloud development.
-
-## Public / private boundary
-
-What may be public:
-
-- Employer name, role, dates, and location from the provided LinkedIn PDF
-  export.
-- Broad role category: mobile and cloud development.
-
-What remains pending:
-
-- Specific programming languages, frameworks, cloud vendors, project
-  scope, production responsibilities, and any measurable outcomes.

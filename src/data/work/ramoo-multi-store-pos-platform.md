@@ -12,14 +12,14 @@ stack:
   - POS
   - Analytics
 status: self-reported
-evidence: Resume PDF provided by the candidate lists this project as a 2026 selected project.
+evidence: 'Source: resume project list supplied by Aria.'
 ---
 
 # Ramoo Multi-Store POS Platform
 
 ## Context
 
-Ramoo Multi-Store POS Platform is listed in the provided resume as a 2026 selected
+Ramoo Multi-Store POS Platform is listed in the resume as a 2026 selected
 project. The scope covers product management, payments, earnings, analytics, teams,
 billing, support, and production error monitoring.
 
@@ -37,8 +37,3 @@ features.
 ## Technology
 
 Next.js · Supabase · Sentry · POS workflows · analytics.
-
-## Scope note
-
-The page is based on the provided resume and avoids private code, account details,
-customer data, and unattributed commercial metrics.

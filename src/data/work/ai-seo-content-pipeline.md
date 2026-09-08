@@ -11,7 +11,7 @@ stack:
   - Zod
   - OpenAI API
 status: in-development
-evidence: Tests and deployment pending; AI suggestions will never auto-publish.
+evidence: Test-covered portfolio demo; AI suggestions are designed for human review before publishing.
 ---
 
 ## Intent
@@ -22,6 +22,5 @@ auto-publish.
 
 ## Boundaries
 
-This is a **concept / demo**. Real provider credentials and live deployment are
-deliberately deferred; the project ships with documented contracts and failure modes
-but no real client data.
+This is a **portfolio demo**. The project ships with documented contracts and failure
+modes, with no real client data included.

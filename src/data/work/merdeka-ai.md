@@ -19,7 +19,7 @@ stack:
   - ChatGPT
 status: self-reported
 evidence: >-
-  LinkedIn profile PDF export and resume PDF provided by the candidate. The
+  LinkedIn profile PDF export and resume PDF provided by the Aria. The
   resume lists selected projects including Takdol, Goband, Ramoo, and ABC Auto Care.
 ---
 
@@ -27,8 +27,8 @@ evidence: >-
 
 ## Context
 
-Merdeka-AI is listed on the provided LinkedIn profile export as the
-candidate's current workplace from January 2025 to present in Kota
+Merdeka-AI is listed on the LinkedIn profile export as the
+Aria's current workplace from January 2025 to present in Kota
 Tangerang Selatan, Banten, Indonesia.
 
 This entry covers the workplace role. Project-specific pages now document selected
@@ -51,7 +51,7 @@ cross-team collaboration.
 
 ### Selected project surfaces
 
-The provided resume lists selected projects from the current work period including
+The resume lists selected projects from the current work period including
 Takdol Marketplace Ecosystem, Goband Logistics Command Center, Ramoo Multi-Store POS
 Platform, and ABC Auto Care Booking Experience. Those are published as separate
 project entries so visitors can scan project-level work without mixing it into the
@@ -66,8 +66,7 @@ applications that can evolve with changing requirements.
 Next.js, with attention to responsive UI/UX and maintainable application
 structure.
 
-**Result.** No standalone performance, conversion, or business metric is published for this contribution in the
-provided source.
+**Result.** Delivered as part of the overall product work.
 
 ### 2. API development and integration
 
@@ -77,7 +76,7 @@ access, workflow integration, and external service communication.
 **Action.** Build and manage RESTful and GraphQL API surfaces using
 Next.js API Routes and external integrations.
 
-**Result.** No standalone metric is published.
+**Result.** Delivered as part of the overall project work.
 
 ### 3. Deployment and operational workflow
 
@@ -87,7 +86,7 @@ maintenance workflows, not only feature implementation.
 **Action.** Deploy and manage applications on cloud platforms while
 maintaining CI/CD workflows, troubleshooting, and monitoring practices.
 
-**Result.** No standalone metric is published.
+**Result.** Delivered as part of the overall project work.
 
 ### 4. Practical AI-assisted development
 
@@ -98,33 +97,15 @@ outputs still need engineering review.
 improve productivity and explore solutions, while keeping final
 implementation decisions under human review.
 
-**Result.** No standalone metric is published.
+**Result.** Delivered as part of the overall project work.
 
 ## Outcome
 
 Current fullstack role covering modern Next.js application development,
 API work, cloud deployment, CI/CD, and AI-assisted engineering practice.
-Specific client names, private implementation details, and quantitative
-outcomes are not published because they are not sourceable from the
-provided evidence.
+The project-specific pages keep selected work visible while this role page stays focused on the wider engineering responsibilities.
 
 ## Technology
 
 Next.js · REST APIs · GraphQL APIs · CI/CD · cloud platforms · Vercel v0 ·
 Claude.ai · ChatGPT.
-
-## Public / private boundary
-
-What may be public:
-
-- Employer name, role, dates, and location from the provided LinkedIn PDF
-  export.
-- Generic responsibility areas listed in the LinkedIn profile.
-- AI tools and broad platform categories explicitly listed in the source.
-
-What must stay private or pending:
-
-- Client identities, repository names, credentials, internal architecture,
-  cloud account details, monitoring data, and proprietary business logic.
-- Any performance, uptime, cost, traffic, or productivity metric that is
-  not isolated to this contribution in the provided source.

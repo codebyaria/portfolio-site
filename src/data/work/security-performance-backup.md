@@ -2,8 +2,8 @@
 title: Security, Performance, and Backup
 slug: security-performance-backup
 summary: Recurring security hardening, page-speed optimisation, and backup
-  setup across multiple WordPress and Astro projects. Generic case
-  study focused on delivery scope rather than unattributed outcome claims.
+  setup across multiple WordPress and Astro projects. Cross-project case
+  study focused on delivery scope and operational responsibilities.
 classification: production
 category: 'recurring'
 role: Web Developer with infrastructure focus
@@ -52,7 +52,7 @@ protected admin paths, set strict file permissions, added security
 headers via Cloudflare or Nginx, enabled rate limiting on auth
 endpoints, and configured basic 2FA where appropriate.
 
-**Result**: No standalone metric is published for this contribution.
+**Result**: Delivered as part of the overall project work.
 
 ### 2. Page-speed optimisation
 
@@ -64,7 +64,7 @@ remediations: image compression and lazy-loading, critical CSS,
 preload of above-the-fold assets, defer of non-critical JS, server
 or page caching, and CDN configuration.
 
-**Result**: No standalone metric is published.
+**Result**: Delivered as part of the overall project work.
 
 ### 3. Backup and restore
 
@@ -75,37 +75,21 @@ hosting provider snapshots.
 and equivalent scripts (Astro) to off-site storage; periodically
 verified restore from backup on a staging environment.
 
-**Result**: No standalone metric is published.
+**Result**: Delivered as part of the overall project work.
 
 ## Outcome
 
 Shipped and maintained security hardening, page-speed optimisation,
 and backup configurations across multiple web projects. Specific
 Lighthouse scores, time-to-recovery, or security incident counts not
-isolated to this contribution; not published as standalone metrics.
+isolated to this contribution; not listed as separate metrics.
 
 ## Evidence
 
-- Self-reported by candidate.
+- Source: resume, LinkedIn profile, or project materials supplied by Aria.
 - No public project URLs disclosed in this entry.
 
 ## Tech
 
 WordPress · Astro · Nginx · Cloudflare · UpdraftPlus · WP Super Cache
 · Lighthouse
-
-## Public / Private boundary
-
-What may be public:
-
-- Generic role label and tooling list publicly associated with
-  these problem areas.
-- Generic descriptions of recurring patterns (header hardening,
-  cache strategy, off-site backup).
-
-What must stay private:
-
-- Project identities and per-project security posture.
-- Specific Lighthouse scores or Core Web Vitals per project.
-- Backup storage locations, encryption keys, or restore credentials.
-- Vulnerability scan output and remediation notes.

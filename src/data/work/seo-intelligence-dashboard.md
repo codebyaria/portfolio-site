@@ -1,7 +1,7 @@
 ---
 title: SEO Intelligence Dashboard
 slug: seo-intelligence-dashboard
-summary: React dashboard demo with simulated GSC, GA4, and Clarity-style sources. Labels every metric as simulated data.
+summary: React dashboard portfolio demo with sample GSC, GA4, and Clarity-style sources. Labels sample data clearly.
 classification: concept-demo
 category: 'project'
 role: Full-Stack Web Developer (demo)
@@ -22,5 +22,5 @@ number.
 
 ## Boundaries
 
-This is a **concept / demo** using **simulated SEO data**. No real GSC, GA4, or
+This is a **portfolio demo** using a sample SEO dataset. No real GSC, GA4, or
 Clarity account is connected.
