@@ -17,7 +17,7 @@ stack:
   - Bootstrap
 status: self-reported
 evidence: >-
-  Archived portfolio PDFs provided by the candidate. The PDFs list project
+  Source: archived portfolio PDFs supplied by Aria. The PDFs list project
   names, dates, tech stacks, and feature summaries, but do not provide live
   URLs or measurable outcomes.
 ---
@@ -69,5 +69,5 @@ Laravel · PHP · HTML · JavaScript · CSS · Bootstrap · Tailwind.
 ## Boundary
 
 This entry is intentionally compact. It records older projects from the
-provided PDF portfolio without inventing client outcomes, live links,
+archived PDF portfolio without inventing client outcomes, live links,
 metrics, or implementation details.

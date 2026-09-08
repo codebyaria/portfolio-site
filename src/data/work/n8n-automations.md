@@ -1,7 +1,7 @@
 ---
 title: n8n Automations
 slug: n8n-automations
-summary: Used n8n for internal automation workflows across projects — no
+summary: Used n8n for team automation workflows across projects — no
   public example available yet. Generic case study with a clear scope note about the absence of a shareable public workflow.
 classification: personal-project
 category: 'recurring'
@@ -18,7 +18,7 @@ status: self-reported
 
 ## Context
 
-n8n is the automation tool used across internal workflows. This entry
+n8n is the automation tool used across workflow automation. This entry
 covers recurring automation shapes, not a single published example.
 There is no public workflow URL to point to yet — that is stated
 honestly below rather than implied.
@@ -43,7 +43,7 @@ CRMs is slow and error-prone.
 form and write the parsed payload to a target system (database or
 spreadsheet) with basic error handling.
 
-**Result**: No standalone metric is published.
+**Result**: Delivered as part of the overall project work.
 
 ### 2. Email-to-task automation
 
@@ -54,7 +54,7 @@ tasks without manual triage.
 incoming mail by simple rules, and create tasks in the relevant
 tracker.
 
-**Result**: No standalone metric is published.
+**Result**: Delivered as part of the overall project work.
 
 ### 3. Scraper-to-Notion sync
 
@@ -65,41 +65,20 @@ without manual copy-paste.
 schedule, transform the data, and push it to a Notion database
 via the Notion API.
 
-**Result**: No standalone metric is published.
+**Result**: Delivered as part of the overall project work.
 
 ## Outcome
 
-Built and maintained a small set of n8n workflows for internal
+Built and maintained a small set of n8n workflows for team
 automation. No public workflow URL is published alongside this entry
 — readers should treat this as a generic claim of tool familiarity
 until a shareable example is available.
 
 ## Evidence
 
-- Self-reported by candidate.
+- Source: resume, LinkedIn profile, or project materials supplied by Aria.
 - No public workflow URL available at the time of writing.
 
 ## Tech
 
 n8n · Webhooks · HTTP API · JSON
-
-## Public / Private boundary
-
-What may be public:
-
-- Generic role label and the fact that n8n is in regular use.
-- Generic descriptions of recurring automation patterns.
-
-What must stay private:
-
-- Internal workflow URLs or workflow IDs.
-- Specific credentials and target-system identifiers.
-- Volumes of executions, error rates, or business impact metrics.
-
-## Scope note
-
-This entry is intentionally published without a shareable public
-example. The original PENDING-FACTS note said "used, no public
-example yet", and that constraint is preserved here rather than
-overstated. If a public workflow is built later, this entry should
-be revised to link to it.

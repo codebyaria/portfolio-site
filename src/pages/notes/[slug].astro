@@ -14,8 +14,8 @@ const { note } = Astro.props;
 const { Content } = await render(note);
 
 const statusLabels = {
-  'in-development': 'In development',
-  'self-reported': 'Self-reported',
+  'in-development': 'In progress',
+  'self-reported': 'Drafted from experience',
   published: 'Published',
 } as const;
 
@@ -34,7 +34,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
   <article class="note container" aria-labelledby="note-title">
     <header class="note__header">
       <p class="label note__eyebrow">
-        <a href="/notes/">Notes</a> · {note.data.slug}
+        <a href="/notes/">Writing</a> · {note.data.slug}
       </p>
       <h1 id="note-title" class="note__title">{note.data.title}</h1>
       <p class="note__summary">{note.data.summary}</p>
@@ -64,7 +64,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
     </div>
 
     <footer class="note__footer">
-      <a href="/notes/">← All notes</a>
+      <a href="/notes/">← All writing</a>
     </footer>
   </article>
 </BaseLayout>

@@ -9,8 +9,8 @@ const notes = (await getCollection('notes')).sort((a, b) => {
 });
 
 const statusLabels = {
-  'in-development': 'In development',
-  'self-reported': 'Self-reported',
+  'in-development': 'In progress',
+  'self-reported': 'Drafted from experience',
   published: 'Published',
 } as const;
 
@@ -22,15 +22,15 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
 ---
 
 <BaseLayout
-  title="Notes"
-  description="Short, evidence-led notes on Astro, headless CMS, SEO, and practical AI automation."
+  title="Writing"
+  description="Practical technical writing on web development, SEO, performance, and automation."
 >
   <section class="container notes" aria-labelledby="notes-title">
-    <p class="label notes__eyebrow">Notes</p>
-    <h1 id="notes-title">Short notes from the workbench.</h1>
+    <p class="label notes__eyebrow">Writing</p>
+    <h1 id="notes-title">Practical technical notes.</h1>
     <p class="notes__intro">
-      I publish only when I have something specific to point at: a working project, a measured
-      result, or a clear pattern. Drafts in progress are labelled as such.
+      Short articles that show how I think through web development, SEO, performance, and automation
+      work.
     </p>
     <ul class="notes__list" role="list">
       {

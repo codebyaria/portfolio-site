@@ -19,7 +19,7 @@ status: self-reported
 deploymentUrl: https://guruinovatif.id/
 evidence: >-
   Live product publicly visible at https://guruinovatif.id/. Specific
-  retention/conversion impact not isolated to this contribution; not published as standalone metrics.
+  retention/conversion impact not isolated to this contribution; not listed as separate metrics.
 ---
 
 # Hasnur Centre
@@ -47,7 +47,7 @@ Web Developer on the engineering team. Contributions below were owned
 end-to-end: from the data model, through the application logic, to the
 front-end integration on the public marketing surface. The team
 collaborated through every phase of the systems development life cycle
-using GitHub for source control and Notion for internal documentation.
+using GitHub for source control and Notion for team documentation.
 
 ## Contributions
 
@@ -61,7 +61,7 @@ channels could be compared honestly.
 flow so that each new user account could be tied back to its
 acquisition channel.
 
-**Result.** No standalone metric is published for this layer.
+**Result.** Delivered as part of the overall platform work.
 
 ### 2. Events feature
 
@@ -73,7 +73,7 @@ application rather than as a separate tool.
 integrated with the existing application surface and the same content
 workflow used by the rest of the platform.
 
-**Result.** No standalone metric is published.
+**Result.** Delivered as part of the overall project work.
 
 ### 3. Affiliate system
 
@@ -83,7 +83,7 @@ teachers and be credited for the referral.
 **Action.** Implemented an affiliate layer so that existing users could
 refer new users and the system could track that relationship end-to-end.
 
-**Result.** No standalone metric is published.
+**Result.** Delivered as part of the overall project work.
 
 ### 4. Public landing page
 
@@ -96,32 +96,14 @@ with Tailwind and Bootstrap used in distinct parts of the page (Tailwind
 for the newer sections, Bootstrap where it was already present in the
 existing component library).
 
-**Result.** No standalone metric is published.
+**Result.** Delivered as part of the overall project work.
 
 ## Outcome
 
 Shipped and maintained the events + affiliate + source-tracking layer,
 plus the public landing page, for the Guruinovatif platform during my
-tenure at Hasnur Centre. Specific retention/conversion impact is not
-published as a standalone metric for this contribution.
+tenure at Hasnur Centre. Delivered as part of the overall platform work.
 
 ## Technology
 
 Laravel · Tailwind · Bootstrap · MySQL · GitHub · Notion.
-
-## What appears in this case study, and what does not
-
-This page is intentionally bounded:
-
-- **Public.** The employer name, the publicly visible product name and
-  offering, the generic role label, the dates, the generic contribution
-  descriptions above, the tech stack, and the link to the live product.
-- **Private.** Internal business logic, customer or user behaviour data,
-  internal team structure, proprietary implementation details, and any
-  metrics that are not personally attributable to this contribution.
-  None of that is reproduced here.
-
-If a future review uncovers a specific, sourceable metric attributable
-to this contribution, it will be added with an explicit evidence note.
-Until then, the "No standalone metric is published" markers above are deliberate and
-honest, not an oversight.
