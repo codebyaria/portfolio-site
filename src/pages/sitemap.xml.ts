@@ -10,7 +10,6 @@ export const GET: APIRoute = async ({ site }) => {
     '/',
     '/work/',
     '/about/',
-    '/notes/',
     '/contact/',
     '/id/',
     '/id/work/',
@@ -19,12 +18,9 @@ export const GET: APIRoute = async ({ site }) => {
   ];
 
   const workEntries = await getCollection('work');
-  const noteEntries = await getCollection('notes');
-
   const workPaths = workEntries.map((entry) => `/work/${entry.data.slug}/`);
-  const notePaths = noteEntries.map((entry) => `/notes/${entry.data.slug}/`);
 
-  const allPaths = [...staticPaths, ...workPaths, ...notePaths];
+  const allPaths = [...staticPaths, ...workPaths];
 
   const lastmod = new Date().toISOString().slice(0, 10);
 
