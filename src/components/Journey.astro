@@ -2,22 +2,33 @@
 /**
  * Journey section — visual timeline of full-time / contract roles.
  *
- * Hard-coded entries (GuruInovatif, Object Expression). Each role becomes
- * a node on a horizontal timeline on wide viewports; on narrow viewports
- * the timeline stacks vertically.
+ * Hard-coded entries from the provided LinkedIn PDF export and public work entries.
+ * Each role becomes a node on a horizontal timeline on wide viewports; on
+ * narrow viewports the timeline stacks vertically.
  *
- * Two entries. Source: ../data/work/{slug}.md (full case study there).
+ * Four workplace entries. Source: ../data/work/{slug}.md (full case study there).
  * No fabrication: only claims already on the public work entries.
  */
 const entries = [
   {
-    slug: 'production-saas-platform',
-    name: 'GuruInovatif',
-    role: 'Fullstack Developer',
-    dates: 'Aug 2022 – Jan 2024',
-    location: 'Indonesia',
+    slug: 'nongsa-sez',
+    name: 'Nongsa SEZ',
+    role: 'Mobile and Cloud Developer',
+    dates: 'Sep 2021 – Jan 2022',
+    location: 'Batam, Indonesia',
     summary:
-      'Source-tracking, events feature, affiliate programme, and the public landing page for an Indonesian teacher-development platform.',
+      'Early professional mobile and cloud development role; technologies and outcomes remain pending because the source does not list them.',
+    stack: ['Mobile development', 'Cloud development'],
+    glyph: '◌',
+  },
+  {
+    slug: 'hasnur-centre',
+    name: 'Hasnur Centre',
+    role: 'Web Developer',
+    dates: 'Aug 2022 – Jan 2024',
+    location: 'Yogyakarta, Indonesia',
+    summary:
+      'Laravel, Tailwind, and Bootstrap work for Hasnur Centre, including the Guruinovatif.id teacher-development platform.',
     stack: ['Laravel', 'Tailwind', 'Bootstrap', 'MySQL'],
     glyph: '◉',
   },
@@ -26,11 +37,22 @@ const entries = [
     name: 'Object Expression Sdn. Bhd.',
     role: 'Fullstack Developer',
     dates: 'Jan 2024 – Mar 2025',
-    location: 'Cyberjaya, Malaysia',
+    location: 'Tangerang Selatan, Indonesia',
     summary:
-      'Web application features, performance optimisation, and maintenance on a PHP (native + Laravel) stack for a Malaysian software company.',
-    stack: ['PHP (native)', 'Laravel', 'MySQL'],
+      'Web application features, performance optimisation, troubleshooting, and maintenance on PHP native and Laravel applications.',
+    stack: ['PHP (native)', 'Laravel'],
     glyph: '◈',
+  },
+  {
+    slug: 'merdeka-ai',
+    name: 'Merdeka-AI',
+    role: 'Fullstack Developer',
+    dates: 'Jan 2025 – Present',
+    location: 'Tangerang Selatan, Indonesia',
+    summary:
+      'Current fullstack role covering Next.js applications, REST/GraphQL APIs, cloud deployment, CI/CD, and AI-assisted development.',
+    stack: ['Next.js', 'REST APIs', 'GraphQL', 'CI/CD'],
+    glyph: '✦',
   },
 ];
 ---

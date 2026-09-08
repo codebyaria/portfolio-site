@@ -13,7 +13,7 @@ export type ProjectStatus = 'in-development' | 'self-reported' | 'published';
 /**
  * Display category for the homepage grouping.
  *
- * - `workplace` — full-time / contract roles (e.g. GuruInovatif, Object Expression).
+ * - `workplace` — full-time / contract roles (e.g. Hasnur Centre, Object Expression).
  * - `project`   — finished or in-development projects with a public deliverable.
  * - `recurring` — recurring patterns of work without a single deliverable
  *                 (e.g. analytics, security, WordPress client engagements).
