@@ -46,7 +46,7 @@ Laravel web applications.
 Laravel) applications, with a focus on user-centric solutions and system
 efficiency.
 
-**Result**: No standalone metric is published for this contribution.
+**Result**: Delivered as part of the overall project work.
 
 ### 2. Performance and reliability
 
@@ -56,7 +56,7 @@ end users.
 **Action**: Optimised performance, troubleshot bugs, and ensured
 seamless functionality across various platforms.
 
-**Result**: No standalone metric is published.
+**Result**: Delivered as part of the overall project work.
 
 ### 3. Maintenance across platforms
 
@@ -66,41 +66,20 @@ running cleanly across different deployment environments.
 **Action**: Maintained and updated existing applications as part of the
 long-running engineering team.
 
-**Result**: No standalone metric is published.
+**Result**: Delivered as part of the overall project work.
 
 ## Outcome
 
 Shipped and maintained PHP and Laravel web application features at a
 Cyberjaya-based Malaysian software company over a 15-month full-time
 engagement. Specific performance, reliability, or scope metrics not
-isolated to this contribution; not published as standalone metrics.
+isolated to this contribution; not listed as separate metrics.
 
 ## Evidence
 
-- LinkedIn profile summary provided by candidate.
+- Source: LinkedIn profile summary supplied by Aria.
 - Public company reference: [objectexpression.com](https://objectexpression.com/).
 
 ## Tech
 
 PHP · Laravel · MySQL or similar RDBMS · general LAMP-style web stack.
-
-## Public / Private boundary
-
-What may be public (this entry):
-
-- Employer name (Object Expression Sdn. Bhd.) and its publicly visible
-  business description.
-- Generic role label (Fullstack Developer).
-- Dates (Jan 2024 – Mar 2025).
-- Generic responsibility summary as quoted from the LinkedIn snippet.
-- Tech stack publicly visible from job descriptions and the company
-  website.
-
-What must stay private:
-
-- Client names or end-customer identities from specific OESB projects.
-- Proprietary business logic, internal architecture decisions, and
-  data models.
-- Internal performance or reliability metrics attributable to
-  individual contributions.
-- Any code or repository that the company has not released publicly.

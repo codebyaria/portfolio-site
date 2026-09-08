@@ -1,7 +1,7 @@
 ---
 title: CCTV Trolley Analytics
 slug: cctv-trolley-analytics
-summary: Analytics project added from candidate-provided context for CCTV trolley monitoring and operational visibility.
+summary: Analytics project added from project context supplied by Aria for CCTV trolley monitoring and operational visibility.
 classification: production
 category: 'project'
 role: Full-Stack Developer
@@ -10,14 +10,14 @@ stack:
   - Dashboard
   - Monitoring
 status: self-reported
-evidence: Candidate-provided context in the portfolio working session. Technical scope can be expanded when stack and feature details are confirmed.
+evidence: 'Source: project context supplied by Aria. Technical scope can be expanded when stack and feature details are confirmed.'
 ---
 
 # CCTV Trolley Analytics
 
 ## Context
 
-CCTV Trolley Analytics was added from candidate-provided context during the portfolio
+CCTV Trolley Analytics was added from project context supplied by Aria during the portfolio
 content review. It is positioned as an analytics project around CCTV trolley monitoring
 and operational visibility.
 
@@ -34,9 +34,3 @@ features, and shareable boundaries are confirmed.
 ## Technology
 
 Analytics · dashboard · monitoring.
-
-## Scope note
-
-This entry uses only the project name and high-level analytics context currently
-provided. It should be expanded with concrete stack, feature, and evidence details
-before being promoted as a homepage-selected project.

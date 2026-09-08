@@ -14,14 +14,14 @@ stack:
   - Shipping
   - CRM
 status: self-reported
-evidence: Resume PDF provided by the candidate lists this project as a 2026 selected project.
+evidence: 'Source: resume project list supplied by Aria.'
 ---
 
 # Takdol Marketplace Ecosystem
 
 ## Context
 
-Takdol Marketplace Ecosystem is listed in the provided resume as a 2026 selected project.
+Takdol Marketplace Ecosystem is listed in the resume as a 2026 selected project.
 The scope spans a marketplace admin surface, Expo mobile app, NestJS backend, wallet,
 shipping, CRM, and real-time operations.
 
@@ -40,9 +40,3 @@ listed in the resume.
 ## Technology
 
 Next.js · React Native · Expo · NestJS · wallet · shipping · CRM.
-
-## Scope note
-
-This page uses the public resume as its source. It does not publish internal
-architecture, private repositories, credentials, customer data, or unattributed
-business metrics.

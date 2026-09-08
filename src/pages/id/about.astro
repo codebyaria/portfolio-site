@@ -1,51 +1,51 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const languages = ['Indonesian (native)', 'English (conversational)'];
+const languages = ['Indonesia (native)', 'English (conversational)'];
 ---
 
 <BaseLayout
-  title="About"
-  description="About Aria Nurhadi Zain: full-stack web developer with agency-stack compatibility, visual orientation, and practical automation interest."
+  lang="id"
+  title="Tentang"
+  description="Tentang Aria Nurhadi Zain: full-stack web developer dengan pengalaman production, delivery WordPress, dan workflow automation."
+  canonical="/id/about/"
 >
   <section class="container about" aria-labelledby="about-title">
-    <p class="label about__eyebrow">About</p>
-    <h1 id="about-title">Full-stack developer, agency mindset.</h1>
+    <p class="label about__eyebrow">Tentang</p>
+    <h1 id="about-title">Full-stack developer dengan agency mindset.</h1>
     <div class="about__grid">
       <div class="about__copy prose">
         <p>
-          I am <strong>Aria Nurhadi Zain</strong>, a full-stack web developer based in Sukoharjo,
-          Central Java, Indonesia. I am drawn to agency work because it combines the two things I
-          care about most: business growth and visual craft.
+          Saya <strong>Aria Nurhadi Zain</strong>, full-stack web developer berbasis di Sukoharjo,
+          Jawa Tengah, Indonesia. Saya tertarik dengan agency work karena menggabungkan web
+          development, visual craft, dan kebutuhan bisnis yang nyata.
         </p>
         <p>
-          My background spans Laravel and PHP application work, WordPress and Elementor client
-          delivery, multi-provider hosting and operations, and practical analytics integrations
-          across GA4, Search Console, Meta and TikTok pixels, Microsoft Clarity, and Hotjar. I have
-          shipped and maintained production systems and I take that maintenance work seriously.
+          Background saya mencakup Laravel dan PHP application work, WordPress dan Elementor client
+          delivery, hosting operations, analytics integration, SEO, API, dan workflow automation.
         </p>
         <p>
-          I also build focused portfolio projects around Astro, Strapi, SEO dashboards, and
-          AI-assisted workflows. They are listed on the <a href="/work/">Work</a> page alongside production
-          roles and client delivery.
+          Portfolio ini menampilkan production roles, client delivery, dan project build yang
+          relevan untuk modern web, dashboard, marketplace, logistics, POS, dan practical AI
+          automation.
         </p>
       </div>
-      <aside class="about__facts" aria-label="Quick facts">
+      <aside class="about__facts" aria-label="Fakta singkat">
         <dl>
           <div>
-            <dt class="label">Based</dt>
-            <dd>Sukoharjo, Central Java, Indonesia</dd>
+            <dt class="label">Lokasi</dt>
+            <dd>Sukoharjo, Jawa Tengah, Indonesia</dd>
           </div>
           <div>
-            <dt class="label">Intent</dt>
-            <dd>Open to full-time remote employment</dd>
+            <dt class="label">Tujuan</dt>
+            <dd>Terbuka untuk full-time remote employment</dd>
           </div>
           <div>
-            <dt class="label">Languages</dt>
+            <dt class="label">Bahasa</dt>
             <dd>{languages.join(' · ')}</dd>
           </div>
           <div>
-            <dt class="label">Portfolio focus</dt>
+            <dt class="label">Fokus portfolio</dt>
             <dd>Production roles · project builds · practical automation</dd>
           </div>
         </dl>
@@ -93,15 +93,6 @@ const languages = ['Indonesian (native)', 'English (conversational)'];
     color: var(--accent);
     font-weight: 700;
   }
-  .about__copy a {
-    color: inherit;
-    border-bottom: 1px solid var(--line);
-    text-decoration: none;
-  }
-  .about__copy a:hover,
-  .about__copy a:focus-visible {
-    border-bottom-color: var(--accent);
-  }
   .about__facts {
     border-left: 1px solid var(--line);
     padding-left: var(--space-lg);
@@ -119,7 +110,7 @@ const languages = ['Indonesian (native)', 'English (conversational)'];
     margin: 0;
     font-weight: 600;
   }
-  @media (max-width: 860px) {
+  @media (max-width: 760px) {
     .about__grid {
       grid-template-columns: 1fr;
     }

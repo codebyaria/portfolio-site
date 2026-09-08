@@ -7,7 +7,7 @@ const { classification, status } = Astro.props as {
 };
 
 const classificationLabels: Record<ProjectClassification, string> = {
-  'concept-demo': 'Concept / Demo',
+  'concept-demo': 'Portfolio demo',
   prototype: 'Prototype',
   'client-work': 'Client work',
   'personal-project': 'Personal project',
@@ -15,9 +15,9 @@ const classificationLabels: Record<ProjectClassification, string> = {
 };
 
 const statusLabels: Record<ProjectStatus, string> = {
-  'in-development': 'In development',
-  'self-reported': 'Self-reported',
-  published: 'Published',
+  'in-development': 'In progress',
+  'self-reported': 'Resume / profile source',
+  published: 'Live / published',
 };
 
 const statusTone: Record<ProjectStatus, string> = {
@@ -29,11 +29,11 @@ const statusTone: Record<ProjectStatus, string> = {
 
 <dl class="evidence-meta">
   <div class="evidence-meta__row">
-    <dt class="label">Classification</dt>
+    <dt class="label">Work type</dt>
     <dd class="chip chip--neutral">{classificationLabels[classification]}</dd>
   </div>
   <div class="evidence-meta__row">
-    <dt class="label">Evidence status</dt>
+    <dt class="label">Source</dt>
     <dd class={`chip chip--${statusTone[status]}`}>{statusLabels[status]}</dd>
   </div>
 </dl>

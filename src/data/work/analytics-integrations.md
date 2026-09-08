@@ -53,7 +53,7 @@ specific sources.
 Manager; wired the base pageview and outbound-click events
 through Tag Manager; verified events in GA4 DebugView.
 
-**Result**: No standalone metric is published for this contribution.
+**Result**: Delivered as part of the overall project work.
 
 ### 2. Ad-platform pixel and conversion API
 
@@ -65,7 +65,7 @@ conversion attribution, not just browser-side pixel events.
 - Events API, and Google Ads conversion tracking. Validated
   deduplicated events server-side.
 
-**Result**: No standalone metric is published.
+**Result**: Delivered as part of the overall project work.
 
 ### 3. Behaviour analytics setup
 
@@ -76,7 +76,7 @@ users behave a certain way on a page.
 projects to capture session replays and heatmaps, with consent
 mode for EU traffic where required.
 
-**Result**: No standalone metric is published.
+**Result**: Delivered as part of the overall project work.
 
 ## Outcome
 
@@ -84,12 +84,11 @@ Set up and maintained analytics integrations across multiple
 projects spanning GA4, Search Console, Tag Manager, Meta Pixel
 and Conversions API, TikTok Pixel and Events API, Google Ads,
 Clarity, and Hotjar. Specific conversion lift, attribution
-accuracy, or session-replay findings are not published as standalone
-metrics for this cross-project entry.
+accuracy, or session-replay findings are not listed as separate metrics for this cross-project entry.
 
 ## Evidence
 
-- Self-reported by candidate.
+- Source: resume, LinkedIn profile, or project materials supplied by Aria.
 - No public project URLs disclosed in this entry.
 
 ## Tech
@@ -97,19 +96,3 @@ metrics for this cross-project entry.
 GA4 · Google Search Console · Google Tag Manager · Meta Pixel ·
 Conversions API · TikTok Pixel · Events API · Google Ads · Microsoft
 Clarity · Hotjar
-
-## Public / Private boundary
-
-What may be public:
-
-- Generic role label and platform list publicly known to anyone
-  who has worked with these tools.
-- Generic descriptions of recurring setup patterns (event schema,
-  conversion API, consent mode).
-
-What must stay private:
-
-- Project identities and traffic volumes per project.
-- Specific conversion numbers, ROAS, or attribution splits.
-- Internal ad-account IDs and login credentials.
-- Raw session-replay or heatmap data.

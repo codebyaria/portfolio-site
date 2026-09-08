@@ -11,14 +11,14 @@ stack:
   - Tailwind CSS
   - Booking Flow
 status: self-reported
-evidence: Resume PDF provided by the candidate lists this project as a 2026 selected project.
+evidence: 'Source: resume project list supplied by Aria.'
 ---
 
 # ABC Auto Care Booking Experience
 
 ## Context
 
-ABC Auto Care Booking Experience is listed in the provided resume as a 2026 selected
+ABC Auto Care Booking Experience is listed in the resume as a 2026 selected
 project. It combines an auto-detailing landing page with a four-step booking flow
 from scheduling through payment and receipt.
 
@@ -35,8 +35,3 @@ Full-Stack Developer working on the public landing and booking experience.
 ## Technology
 
 Next.js · TypeScript · Tailwind CSS · booking flow.
-
-## Scope note
-
-This page publishes only resume-supported project scope and stack. It does not add
-unattributed conversion metrics or private implementation details.

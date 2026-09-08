@@ -1,0 +1,166 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const selectedOrder = [
+  'takdol-marketplace-ecosystem',
+  'goband-logistics-command-center',
+  'ramoo-multi-store-pos-platform',
+] as const;
+const allProjects = await getCollection('work');
+const selectedProjects = selectedOrder
+  .map((slug) => allProjects.find((project) => project.data.slug === slug))
+  .filter((project): project is NonNullable<typeof project> => Boolean(project));
+---
+
+<BaseLayout
+  lang="id"
+  title="Aria Nurhadi Zain"
+  description="Full Stack Developer dengan pengalaman membangun aplikasi web, content platform, SEO, API, dan otomasi praktis."
+  canonical="/id/"
+>
+  <section class="id-home container" aria-labelledby="id-home-title">
+    <p class="label id-home__eyebrow">Aria Nurhadi Zain · Full-stack Web Developer</p>
+    <h1 id="id-home-title">Membangun aplikasi web, dashboard, dan workflow automation.</h1>
+    <p class="id-home__lead">
+      Portfolio ini menampilkan project production-style, pengalaman kerja, dan demo teknis yang
+      relevan untuk web development modern, SEO, API, dan AI-assisted workflow.
+    </p>
+    <div class="id-home__actions">
+      <a class="button button--primary" href="/id/work/">Lihat karya</a>
+      <a class="button button--secondary" href="/contact/">Kontak</a>
+    </div>
+  </section>
+
+  <section class="id-home id-home--compact container" aria-labelledby="id-selected-title">
+    <div class="id-home__section-header">
+      <p class="label id-home__eyebrow">Project pilihan</p>
+      <h2 id="id-selected-title">Beberapa project yang paling layak dibuka dulu.</h2>
+      <a href="/id/work/">Lihat semua karya</a>
+    </div>
+    <div class="id-home__grid">
+      {
+        selectedProjects.map((project) => (
+          <article class="id-card">
+            <h3>
+              <a href={`/work/${project.data.slug}/`}>{project.data.title}</a>
+            </h3>
+            <p>{project.data.summary}</p>
+            <p class="id-card__stack">{project.data.stack.slice(0, 4).join(' · ')}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="id-home id-home--compact container" aria-labelledby="id-focus-title">
+    <p class="label id-home__eyebrow">Fokus</p>
+    <h2 id="id-focus-title">Full-stack delivery dengan rasa produk dan bisnis.</h2>
+    <ul class="id-list" role="list">
+      <li>Next.js, React, Laravel, PHP, WordPress, dan API integration.</li>
+      <li>Project marketplace, logistics command center, POS, booking flow, dan analytics.</li>
+      <li>SEO, performance, deployment, maintenance, dan automation workflow.</li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .id-home {
+    padding-block: clamp(2.5rem, 7vw, 6rem);
+    display: grid;
+    gap: var(--space-lg);
+    border-bottom: 1px solid var(--line);
+  }
+  .id-home--compact {
+    padding-block: clamp(2.25rem, 6vw, 5rem);
+  }
+  .id-home__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .id-home h1,
+  .id-home h2 {
+    margin: 0;
+    font-family: var(--font-sans);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .id-home h1 {
+    max-width: 17ch;
+    font-size: clamp(2.5rem, 6vw, 4.7rem);
+  }
+  .id-home h2 {
+    max-width: 20ch;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+  }
+  .id-home__lead {
+    margin: 0;
+    max-width: 58ch;
+    color: var(--ink);
+    font-family: var(--font-longform);
+    font-size: 1.1875rem;
+    line-height: 1.55;
+  }
+  .id-home__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .button,
+  .id-home__section-header a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: 1rem;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .button--primary {
+    background: var(--ink);
+    color: var(--inverse);
+  }
+  .id-home__section-header {
+    display: grid;
+    gap: var(--space-sm);
+  }
+  .id-home__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-md);
+  }
+  .id-card {
+    display: grid;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+    border: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .id-card h3 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 1.45rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .id-card a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .id-card p,
+  .id-list {
+    margin: 0;
+    color: var(--soft-ink);
+    line-height: 1.55;
+  }
+  .id-card__stack {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+  .id-list {
+    padding-left: 1.25rem;
+    display: grid;
+    gap: var(--space-sm);
+  }
+</style>

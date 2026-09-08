@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="id"
+  title="Kontak"
+  description="Aria Nurhadi Zain terbuka untuk full-time remote opportunities di web development, AI automation, dan modern web architecture."
+  canonical="/id/contact/"
+>
+  <section class="container contact" aria-labelledby="contact-title">
+    <p class="label contact__eyebrow">Kontak</p>
+    <h1 id="contact-title">Tertarik bekerja sama?</h1>
+    <p class="contact__lead">
+      Saya terbuka untuk full-time opportunities di web development, AI automation, dan modern web
+      architecture. Saat ini berbasis di Sukoharjo, Jawa Tengah, Indonesia, dan siap untuk role
+      fully remote.
+    </p>
+    <ul class="contact__list" role="list">
+      <li>
+        <span class="label">Email</span>
+        <a href="mailto:arianurhadi81@gmail.com">arianurhadi81@gmail.com</a>
+      </li>
+      <li>
+        <span class="label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/ariazain/" rel="me">linkedin.com/in/ariazain</a>
+      </li>
+      <li>
+        <span class="label">GitHub</span>
+        <a href="https://github.com/codebyaria" rel="me">github.com/codebyaria</a>
+      </li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact {
+    padding-block: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    gap: var(--space-xl);
+    max-width: var(--reading-width);
+  }
+  .contact__eyebrow {
+    color: var(--accent);
+    margin: 0;
+  }
+  .contact h1 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+  .contact__lead {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-longform);
+    font-size: 1.1875rem;
+    line-height: 1.55;
+    max-width: 56ch;
+  }
+  .contact__list {
+    list-style: none;
+    margin: 0;
+    padding: var(--space-lg) 0 0;
+    display: grid;
+    gap: var(--space-md);
+    border-top: 1px solid var(--line);
+  }
+  .contact__list li {
+    display: grid;
+    gap: 0.15rem;
+  }
+  .contact__list .label {
+    color: var(--soft-ink);
+  }
+  .contact__list a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    font-weight: 700;
+  }
+  .contact__list a:hover,
+  .contact__list a:focus-visible {
+    border-bottom-color: var(--accent);
+  }
+</style>

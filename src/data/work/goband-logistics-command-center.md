@@ -12,14 +12,14 @@ stack:
   - OCR
   - SLA Monitoring
 status: self-reported
-evidence: Resume PDF provided by the candidate lists this project as a 2026 selected project.
+evidence: 'Source: resume project list supplied by Aria.'
 ---
 
 # Goband Logistics Command Center
 
 ## Context
 
-Goband Logistics Command Center is listed in the provided resume as a 2026 selected
+Goband Logistics Command Center is listed in the resume as a 2026 selected
 project. The product scope covers order intake, dispatch operations, driver/FIDS
 monitoring, buffer control, OCR entry, and SLA visibility.
 
@@ -38,9 +38,3 @@ logistics operations.
 ## Technology
 
 Next.js · Supabase · Google Maps · OCR · SLA monitoring.
-
-## Scope note
-
-This page stays at portfolio-safe detail: public project name, broad feature scope,
-and stack from the resume, without publishing private implementation details or
-unattributed operational metrics.

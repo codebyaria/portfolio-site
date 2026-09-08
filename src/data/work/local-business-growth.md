@@ -1,7 +1,7 @@
 ---
 title: Local Business Growth Website
 slug: local-business-growth
-summary: Full-stack Astro + Strapi demo for a fictional roofing business, focused on local SEO, services/locations, and conversion.
+summary: Full-stack Astro + Strapi portfolio demo for a sample roofing business, focused on local SEO, services/locations, and conversion.
 classification: concept-demo
 category: 'project'
 role: Full-Stack Web Developer (demo)
@@ -22,5 +22,5 @@ that respects publishing rules.
 
 ## Boundaries
 
-This is a **concept / demo** project. The business is fictional, the screenshots are
-pending, and the deployment will be documented when the build is verified.
+This is a **portfolio demo** project using a sample business. Screenshots and deployment
+details will be documented when the build is verified.

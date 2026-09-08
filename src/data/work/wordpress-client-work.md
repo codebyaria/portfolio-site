@@ -3,7 +3,7 @@ title: Virtual Office Jakarta
 slug: wordpress-client-work
 summary: WordPress + Elementor build and ongoing maintenance for an
   Indonesian virtual-office services company. Single-client engagement
-  focused on delivery scope rather than unattributed performance claims.
+  focused on delivery scope rather than broad performance claims.
 classification: client-work
 category: 'project'
 role: WordPress Developer
@@ -29,7 +29,7 @@ Indonesian virtual-office services company — a single-client WordPress
 - Elementor engagement. The site uses WordPress with an Elementor-built
   front end, configured for the virtual-office industry and the client
   brand identity. The site is publicly live; specific visitor / conversion
-  impact attributable to this contribution is not published as a standalone metric.
+  impact attributable to this contribution is not listed as a separate metric.
 
 ## Dates and work arrangement
 
@@ -52,7 +52,7 @@ business and is editable by non-technical staff after hand-off.
 core pages (home, services, about, contact) using Elementor
 templates customised to the client brand.
 
-**Result**: No standalone metric is published for this contribution.
+**Result**: Delivered as part of the overall project work.
 
 ### 2. Hosting and domain hand-off
 
@@ -63,7 +63,7 @@ hosting, DNS, and SSL on their own.
 pointed the domain, and installed SSL. Documented access for the
 client.
 
-**Result**: No standalone metric is published.
+**Result**: Delivered as part of the overall project work.
 
 ### 3. Maintenance and updates
 
@@ -73,36 +73,19 @@ stability.
 **Action**: Provided scheduled maintenance for plugin, theme, and
 WordPress core updates, plus content edits as requested.
 
-**Result**: No standalone metric is published.
+**Result**: Delivered as part of the overall project work.
 
 ## Outcome
 
 Shipped and maintained WordPress + Elementor sites for multiple
 small business clients. Specific traffic, conversion, or retention
-impact is not published as a standalone metric for this engagement.
+impact is not listed as a separate metric for this engagement.
 
 ## Evidence
 
 - Live product publicly visible at <https://virtualofficejakarta.co.id/>.
-- Self-reported by candidate; specific traffic / conversion numbers not
-  isolated to this contribution.
+- Public site is available for review.
 
 ## Tech
 
 WordPress · Elementor · PHP · MySQL · HTML · CSS · JavaScript
-
-## Public / Private boundary
-
-What may be public:
-
-- Client name (publicly visible at <https://virtualofficejakarta.co.id/>).
-- Generic role label and stack publicly associated with WordPress client
-  work.
-- Description of site structure and feature patterns.
-- Hosting provider commonly used in Indonesia.
-
-What must stay private:
-
-- Specific revenue, traffic, or conversion numbers.
-- Internal client communications and unpublished screenshots.
-- Login credentials and host access details.
